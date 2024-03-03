@@ -30,18 +30,25 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.sportsmanNameTextbox = new System.Windows.Forms.TextBox();
-            this.addSportsmanButton = new System.Windows.Forms.Button();
-            this.sportsmanGenderCombobox = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.findSportsmanButton = new System.Windows.Forms.Button();
-            this.editSportsmanButton = new System.Windows.Forms.Button();
-            this.deleteSportsmanButton = new System.Windows.Forms.Button();
-            this.changeModeSportsman = new System.Windows.Forms.Button();
             this.searchSportsmanTextbox = new System.Windows.Forms.TextBox();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.sportsmanSponsorTextbox = new System.Windows.Forms.TextBox();
+            this.sportsmanEmailTextbox = new System.Windows.Forms.TextBox();
+            this.sportsmanNameTextbox = new System.Windows.Forms.TextBox();
+            this.findSportsmanButton = new System.Windows.Forms.Button();
+            this.nextPageSportsmansButton = new System.Windows.Forms.Button();
+            this.deleteSportsmanButton = new System.Windows.Forms.Button();
+            this.editSportsmanButton = new System.Windows.Forms.Button();
+            this.refreshSportsmanButton = new System.Windows.Forms.Button();
+            this.addSportsmanButton = new System.Windows.Forms.Button();
+            this.sportsmanCategoryCombobox = new System.Windows.Forms.ComboBox();
+            this.sportsmanGenderCombobox = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -53,6 +60,7 @@
             this.button10 = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -64,23 +72,18 @@
             this.button15 = new System.Windows.Forms.Button();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.sportsmanEmailTextbox = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.sportsmanSponsorTextbox = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.sportsmanCategoryCombobox = new System.Windows.Forms.ComboBox();
-            this.refreshSportsmanButton = new System.Windows.Forms.Button();
+            this.currentPageSportsmans = new System.Windows.Forms.NumericUpDown();
+            this.label8 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.tabPage3.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.currentPageSportsmans)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -94,24 +97,26 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1189, 426);
+            this.tabControl1.Size = new System.Drawing.Size(1387, 552);
             this.tabControl1.TabIndex = 4;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.currentPageSportsmans);
             this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Controls.Add(this.searchSportsmanTextbox);
             this.tabPage1.Controls.Add(this.sportsmanSponsorTextbox);
             this.tabPage1.Controls.Add(this.sportsmanEmailTextbox);
             this.tabPage1.Controls.Add(this.sportsmanNameTextbox);
             this.tabPage1.Controls.Add(this.findSportsmanButton);
-            this.tabPage1.Controls.Add(this.changeModeSportsman);
+            this.tabPage1.Controls.Add(this.nextPageSportsmansButton);
             this.tabPage1.Controls.Add(this.deleteSportsmanButton);
             this.tabPage1.Controls.Add(this.editSportsmanButton);
             this.tabPage1.Controls.Add(this.refreshSportsmanButton);
             this.tabPage1.Controls.Add(this.addSportsmanButton);
             this.tabPage1.Controls.Add(this.sportsmanCategoryCombobox);
             this.tabPage1.Controls.Add(this.sportsmanGenderCombobox);
+            this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label7);
@@ -120,11 +125,192 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1181, 397);
+            this.tabPage1.Size = new System.Drawing.Size(1379, 523);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Спортсмени";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 51);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(799, 422);
+            this.dataGridView1.TabIndex = 8;
+            // 
+            // searchSportsmanTextbox
+            // 
+            this.searchSportsmanTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.searchSportsmanTextbox.Location = new System.Drawing.Point(6, 7);
+            this.searchSportsmanTextbox.Name = "searchSportsmanTextbox";
+            this.searchSportsmanTextbox.Size = new System.Drawing.Size(247, 38);
+            this.searchSportsmanTextbox.TabIndex = 7;
+            // 
+            // sportsmanSponsorTextbox
+            // 
+            this.sportsmanSponsorTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.sportsmanSponsorTextbox.Location = new System.Drawing.Point(817, 303);
+            this.sportsmanSponsorTextbox.Name = "sportsmanSponsorTextbox";
+            this.sportsmanSponsorTextbox.Size = new System.Drawing.Size(556, 38);
+            this.sportsmanSponsorTextbox.TabIndex = 7;
+            // 
+            // sportsmanEmailTextbox
+            // 
+            this.sportsmanEmailTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.sportsmanEmailTextbox.Location = new System.Drawing.Point(1088, 141);
+            this.sportsmanEmailTextbox.Name = "sportsmanEmailTextbox";
+            this.sportsmanEmailTextbox.Size = new System.Drawing.Size(285, 38);
+            this.sportsmanEmailTextbox.TabIndex = 7;
+            // 
+            // sportsmanNameTextbox
+            // 
+            this.sportsmanNameTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.sportsmanNameTextbox.Location = new System.Drawing.Point(817, 141);
+            this.sportsmanNameTextbox.Name = "sportsmanNameTextbox";
+            this.sportsmanNameTextbox.Size = new System.Drawing.Size(265, 38);
+            this.sportsmanNameTextbox.TabIndex = 7;
+            // 
+            // findSportsmanButton
+            // 
+            this.findSportsmanButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.findSportsmanButton.Location = new System.Drawing.Point(259, 7);
+            this.findSportsmanButton.Name = "findSportsmanButton";
+            this.findSportsmanButton.Size = new System.Drawing.Size(132, 38);
+            this.findSportsmanButton.TabIndex = 6;
+            this.findSportsmanButton.Text = "Пошук";
+            this.findSportsmanButton.UseVisualStyleBackColor = true;
+            this.findSportsmanButton.Click += new System.EventHandler(this.findSportsmanButton_Click);
+            // 
+            // nextPageSportsmansButton
+            // 
+            this.nextPageSportsmansButton.Enabled = false;
+            this.nextPageSportsmansButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nextPageSportsmansButton.Location = new System.Drawing.Point(1326, 383);
+            this.nextPageSportsmansButton.Name = "nextPageSportsmansButton";
+            this.nextPageSportsmansButton.Size = new System.Drawing.Size(47, 38);
+            this.nextPageSportsmansButton.TabIndex = 6;
+            this.nextPageSportsmansButton.Text = "X";
+            this.nextPageSportsmansButton.UseVisualStyleBackColor = true;
+            this.nextPageSportsmansButton.Click += new System.EventHandler(this.changeModeSportsman_Click);
+            // 
+            // deleteSportsmanButton
+            // 
+            this.deleteSportsmanButton.Enabled = false;
+            this.deleteSportsmanButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.deleteSportsmanButton.Location = new System.Drawing.Point(1160, 383);
+            this.deleteSportsmanButton.Name = "deleteSportsmanButton";
+            this.deleteSportsmanButton.Size = new System.Drawing.Size(160, 38);
+            this.deleteSportsmanButton.TabIndex = 6;
+            this.deleteSportsmanButton.Text = "Видалити";
+            this.deleteSportsmanButton.UseVisualStyleBackColor = true;
+            // 
+            // editSportsmanButton
+            // 
+            this.editSportsmanButton.Enabled = false;
+            this.editSportsmanButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.editSportsmanButton.Location = new System.Drawing.Point(951, 383);
+            this.editSportsmanButton.Name = "editSportsmanButton";
+            this.editSportsmanButton.Size = new System.Drawing.Size(203, 38);
+            this.editSportsmanButton.TabIndex = 6;
+            this.editSportsmanButton.Text = "Редагувати";
+            this.editSportsmanButton.UseVisualStyleBackColor = true;
+            // 
+            // refreshSportsmanButton
+            // 
+            this.refreshSportsmanButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.refreshSportsmanButton.Location = new System.Drawing.Point(6, 479);
+            this.refreshSportsmanButton.Name = "refreshSportsmanButton";
+            this.refreshSportsmanButton.Size = new System.Drawing.Size(160, 38);
+            this.refreshSportsmanButton.TabIndex = 6;
+            this.refreshSportsmanButton.Text = "Оновити";
+            this.refreshSportsmanButton.UseVisualStyleBackColor = true;
+            this.refreshSportsmanButton.Click += new System.EventHandler(this.refreshSportsmanButton_ClickAsync);
+            // 
+            // addSportsmanButton
+            // 
+            this.addSportsmanButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.addSportsmanButton.Location = new System.Drawing.Point(811, 383);
+            this.addSportsmanButton.Name = "addSportsmanButton";
+            this.addSportsmanButton.Size = new System.Drawing.Size(134, 38);
+            this.addSportsmanButton.TabIndex = 6;
+            this.addSportsmanButton.Text = "Додати";
+            this.addSportsmanButton.UseVisualStyleBackColor = true;
+            // 
+            // sportsmanCategoryCombobox
+            // 
+            this.sportsmanCategoryCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.sportsmanCategoryCombobox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.sportsmanCategoryCombobox.FormattingEnabled = true;
+            this.sportsmanCategoryCombobox.Location = new System.Drawing.Point(1088, 217);
+            this.sportsmanCategoryCombobox.Name = "sportsmanCategoryCombobox";
+            this.sportsmanCategoryCombobox.Size = new System.Drawing.Size(285, 39);
+            this.sportsmanCategoryCombobox.TabIndex = 5;
+            // 
+            // sportsmanGenderCombobox
+            // 
+            this.sportsmanGenderCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.sportsmanGenderCombobox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.sportsmanGenderCombobox.FormattingEnabled = true;
+            this.sportsmanGenderCombobox.Location = new System.Drawing.Point(817, 217);
+            this.sportsmanGenderCombobox.Name = "sportsmanGenderCombobox";
+            this.sportsmanGenderCombobox.Size = new System.Drawing.Size(265, 39);
+            this.sportsmanGenderCombobox.TabIndex = 5;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(1034, 268);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(128, 32);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Спонсор";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(1082, 106);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(86, 32);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Email";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Location = new System.Drawing.Point(1082, 182);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(161, 32);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "Вид спорту";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(811, 182);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(91, 32);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Стать";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(811, 106);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 32);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Ім\'я";
             // 
             // tabPage2
             // 
@@ -142,133 +328,10 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1181, 397);
+            this.tabPage2.Size = new System.Drawing.Size(1379, 523);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Змагання";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // sportsmanNameTextbox
-            // 
-            this.sportsmanNameTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.sportsmanNameTextbox.Location = new System.Drawing.Point(612, 63);
-            this.sportsmanNameTextbox.Name = "sportsmanNameTextbox";
-            this.sportsmanNameTextbox.Size = new System.Drawing.Size(265, 38);
-            this.sportsmanNameTextbox.TabIndex = 7;
-            // 
-            // addSportsmanButton
-            // 
-            this.addSportsmanButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.addSportsmanButton.Location = new System.Drawing.Point(606, 305);
-            this.addSportsmanButton.Name = "addSportsmanButton";
-            this.addSportsmanButton.Size = new System.Drawing.Size(134, 38);
-            this.addSportsmanButton.TabIndex = 6;
-            this.addSportsmanButton.Text = "Додати";
-            this.addSportsmanButton.UseVisualStyleBackColor = true;
-            // 
-            // sportsmanGenderCombobox
-            // 
-            this.sportsmanGenderCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.sportsmanGenderCombobox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.sportsmanGenderCombobox.FormattingEnabled = true;
-            this.sportsmanGenderCombobox.Location = new System.Drawing.Point(612, 139);
-            this.sportsmanGenderCombobox.Name = "sportsmanGenderCombobox";
-            this.sportsmanGenderCombobox.Size = new System.Drawing.Size(265, 39);
-            this.sportsmanGenderCombobox.TabIndex = 5;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(606, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 32);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Ім\'я";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 6);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(594, 337);
-            this.dataGridView1.TabIndex = 8;
-            // 
-            // findSportsmanButton
-            // 
-            this.findSportsmanButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.findSportsmanButton.Location = new System.Drawing.Point(468, 349);
-            this.findSportsmanButton.Name = "findSportsmanButton";
-            this.findSportsmanButton.Size = new System.Drawing.Size(132, 38);
-            this.findSportsmanButton.TabIndex = 6;
-            this.findSportsmanButton.Text = "Пошук";
-            this.findSportsmanButton.UseVisualStyleBackColor = true;
-            // 
-            // editSportsmanButton
-            // 
-            this.editSportsmanButton.Enabled = false;
-            this.editSportsmanButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.editSportsmanButton.Location = new System.Drawing.Point(746, 305);
-            this.editSportsmanButton.Name = "editSportsmanButton";
-            this.editSportsmanButton.Size = new System.Drawing.Size(203, 38);
-            this.editSportsmanButton.TabIndex = 6;
-            this.editSportsmanButton.Text = "Редагувати";
-            this.editSportsmanButton.UseVisualStyleBackColor = true;
-            // 
-            // deleteSportsmanButton
-            // 
-            this.deleteSportsmanButton.Enabled = false;
-            this.deleteSportsmanButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.deleteSportsmanButton.Location = new System.Drawing.Point(955, 305);
-            this.deleteSportsmanButton.Name = "deleteSportsmanButton";
-            this.deleteSportsmanButton.Size = new System.Drawing.Size(160, 38);
-            this.deleteSportsmanButton.TabIndex = 6;
-            this.deleteSportsmanButton.Text = "Видалити";
-            this.deleteSportsmanButton.UseVisualStyleBackColor = true;
-            // 
-            // changeModeSportsman
-            // 
-            this.changeModeSportsman.Enabled = false;
-            this.changeModeSportsman.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.changeModeSportsman.Location = new System.Drawing.Point(1121, 305);
-            this.changeModeSportsman.Name = "changeModeSportsman";
-            this.changeModeSportsman.Size = new System.Drawing.Size(47, 38);
-            this.changeModeSportsman.TabIndex = 6;
-            this.changeModeSportsman.Text = "X";
-            this.changeModeSportsman.UseVisualStyleBackColor = true;
-            this.changeModeSportsman.Click += new System.EventHandler(this.changeModeSportsman_Click);
-            // 
-            // searchSportsmanTextbox
-            // 
-            this.searchSportsmanTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.searchSportsmanTextbox.Location = new System.Drawing.Point(215, 349);
-            this.searchSportsmanTextbox.Name = "searchSportsmanTextbox";
-            this.searchSportsmanTextbox.Size = new System.Drawing.Size(247, 38);
-            this.searchSportsmanTextbox.TabIndex = 7;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.numericUpDown3);
-            this.tabPage3.Controls.Add(this.dataGridView3);
-            this.tabPage3.Controls.Add(this.textBox5);
-            this.tabPage3.Controls.Add(this.textBox6);
-            this.tabPage3.Controls.Add(this.button11);
-            this.tabPage3.Controls.Add(this.button12);
-            this.tabPage3.Controls.Add(this.button13);
-            this.tabPage3.Controls.Add(this.button14);
-            this.tabPage3.Controls.Add(this.button15);
-            this.tabPage3.Controls.Add(this.comboBox3);
-            this.tabPage3.Controls.Add(this.label3);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1181, 397);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Нормативи";
-            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // numericUpDown2
             // 
@@ -373,6 +436,26 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "label2";
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.numericUpDown3);
+            this.tabPage3.Controls.Add(this.dataGridView3);
+            this.tabPage3.Controls.Add(this.textBox5);
+            this.tabPage3.Controls.Add(this.textBox6);
+            this.tabPage3.Controls.Add(this.button11);
+            this.tabPage3.Controls.Add(this.button12);
+            this.tabPage3.Controls.Add(this.button13);
+            this.tabPage3.Controls.Add(this.button14);
+            this.tabPage3.Controls.Add(this.button15);
+            this.tabPage3.Controls.Add(this.comboBox3);
+            this.tabPage3.Controls.Add(this.label3);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(1379, 523);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Нормативи";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
             // numericUpDown3
             // 
             this.numericUpDown3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -476,88 +559,44 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "label3";
             // 
-            // label4
+            // currentPageSportsmans
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(877, 28);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 32);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Email";
+            this.currentPageSportsmans.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.currentPageSportsmans.Location = new System.Drawing.Point(685, 479);
+            this.currentPageSportsmans.Maximum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.currentPageSportsmans.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.currentPageSportsmans.Name = "currentPageSportsmans";
+            this.currentPageSportsmans.Size = new System.Drawing.Size(120, 38);
+            this.currentPageSportsmans.TabIndex = 21;
+            this.currentPageSportsmans.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
-            // sportsmanEmailTextbox
+            // label8
             // 
-            this.sportsmanEmailTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.sportsmanEmailTextbox.Location = new System.Drawing.Point(883, 63);
-            this.sportsmanEmailTextbox.Name = "sportsmanEmailTextbox";
-            this.sportsmanEmailTextbox.Size = new System.Drawing.Size(285, 38);
-            this.sportsmanEmailTextbox.TabIndex = 7;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(829, 190);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(128, 32);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Спонсор";
-            // 
-            // sportsmanSponsorTextbox
-            // 
-            this.sportsmanSponsorTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.sportsmanSponsorTextbox.Location = new System.Drawing.Point(612, 225);
-            this.sportsmanSponsorTextbox.Name = "sportsmanSponsorTextbox";
-            this.sportsmanSponsorTextbox.Size = new System.Drawing.Size(556, 38);
-            this.sportsmanSponsorTextbox.TabIndex = 7;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(606, 104);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 32);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Стать";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(877, 104);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(161, 32);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Вид спорту";
-            // 
-            // sportsmanCategoryCombobox
-            // 
-            this.sportsmanCategoryCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.sportsmanCategoryCombobox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.sportsmanCategoryCombobox.FormattingEnabled = true;
-            this.sportsmanCategoryCombobox.Location = new System.Drawing.Point(883, 139);
-            this.sportsmanCategoryCombobox.Name = "sportsmanCategoryCombobox";
-            this.sportsmanCategoryCombobox.Size = new System.Drawing.Size(285, 39);
-            this.sportsmanCategoryCombobox.TabIndex = 5;
-            // 
-            // refreshSportsmanButton
-            // 
-            this.refreshSportsmanButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.refreshSportsmanButton.Location = new System.Drawing.Point(6, 349);
-            this.refreshSportsmanButton.Name = "refreshSportsmanButton";
-            this.refreshSportsmanButton.Size = new System.Drawing.Size(160, 38);
-            this.refreshSportsmanButton.TabIndex = 6;
-            this.refreshSportsmanButton.Text = "Оновити";
-            this.refreshSportsmanButton.UseVisualStyleBackColor = true;
-            this.refreshSportsmanButton.Click += new System.EventHandler(this.refreshSportsmanButton_ClickAsync);
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.Location = new System.Drawing.Point(537, 481);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(132, 32);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Сторінка";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1213, 450);
+            this.ClientSize = new System.Drawing.Size(1411, 576);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Form1";
@@ -565,15 +604,16 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.currentPageSportsmans)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -590,7 +630,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox searchSportsmanTextbox;
         private System.Windows.Forms.Button findSportsmanButton;
-        private System.Windows.Forms.Button changeModeSportsman;
+        private System.Windows.Forms.Button nextPageSportsmansButton;
         private System.Windows.Forms.Button deleteSportsmanButton;
         private System.Windows.Forms.Button editSportsmanButton;
         private System.Windows.Forms.TabPage tabPage3;
@@ -624,6 +664,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button refreshSportsmanButton;
+        private System.Windows.Forms.NumericUpDown currentPageSportsmans;
+        private System.Windows.Forms.Label label8;
     }
 }
 
