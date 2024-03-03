@@ -216,6 +216,7 @@
             this.deleteSportsmanButton.TabIndex = 6;
             this.deleteSportsmanButton.Text = "Видалити";
             this.deleteSportsmanButton.UseVisualStyleBackColor = true;
+            this.deleteSportsmanButton.Click += new System.EventHandler(this.deleteSportsmanButton_Click);
             // 
             // editSportsmanButton
             // 

@@ -202,6 +202,43 @@ namespace api_laravel
             }
         }
 
+        private async void deleteSportsmanButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (String.IsNullOrWhiteSpace(sportsmansIdNumeric.Value.ToString()))
+                {
+                    MessageBox.Show("Please enter a valid sportsman ID.");
+                    return;
+                }
+
+                int sportsmanId = Convert.ToInt32(sportsmansIdNumeric.Value);
+                string apiUrl = $"http://localhost:8000/api/sportsmans/{sportsmanId}";
+
+                HttpResponseMessage response = await _httpClient.DeleteAsync(apiUrl);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    MessageBox.Show("Sportsman deleted successfully.");
+
+                    sportsmansIdNumeric_ValueChanged(null, null);
+                    changeModeSportsmanMethod();
+                    findSportsmanButton_Click(null, null);
+                }
+                else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+                {
+                    MessageBox.Show("Sportsman not found.");
+                }
+                else
+                {
+                    MessageBox.Show($"Error: {response.StatusCode}");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
     }
     public class Sportsman
     {
