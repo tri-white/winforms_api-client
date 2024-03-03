@@ -1,0 +1,13 @@
+C:\Users\olego\source\repos\api_laravel\api_laravel\bin\Debug\api_laravel.exe.config
+C:\Users\olego\source\repos\api_laravel\api_laravel\bin\Debug\api_laravel.exe
+C:\Users\olego\source\repos\api_laravel\api_laravel\bin\Debug\api_laravel.pdb
+C:\Users\olego\source\repos\api_laravel\api_laravel\obj\Debug\api_laravel.csproj.AssemblyReference.cache
+C:\Users\olego\source\repos\api_laravel\api_laravel\obj\Debug\api_laravel.Properties.Resources.resources
+C:\Users\olego\source\repos\api_laravel\api_laravel\obj\Debug\api_laravel.csproj.GenerateResource.cache
+C:\Users\olego\source\repos\api_laravel\api_laravel\obj\Debug\api_laravel.csproj.CoreCompileInputs.cache
+C:\Users\olego\source\repos\api_laravel\api_laravel\obj\Debug\api_laravel.exe
+C:\Users\olego\source\repos\api_laravel\api_laravel\obj\Debug\api_laravel.pdb
+C:\Users\olego\source\repos\api_laravel\api_laravel\bin\Debug\Newtonsoft.Json.dll
+C:\Users\olego\source\repos\api_laravel\api_laravel\bin\Debug\Newtonsoft.Json.xml
+C:\Users\olego\source\repos\api_laravel\api_laravel\obj\Debug\api_laravel.Sportsman.resources
+C:\Users\olego\source\repos\api_laravel\api_laravel\obj\Debug\api_laravel.csproj.CopyComplete
