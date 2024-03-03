@@ -228,6 +228,7 @@
             this.editSportsmanButton.TabIndex = 6;
             this.editSportsmanButton.Text = "Редагувати";
             this.editSportsmanButton.UseVisualStyleBackColor = true;
+            this.editSportsmanButton.Click += new System.EventHandler(this.editSportsmanButton_Click);
             // 
             // refreshSportsmanButton
             // 
