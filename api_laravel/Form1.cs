@@ -5,6 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Net.Http;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,24 +24,48 @@ namespace api_laravel
         {
             InitializeComponent();
             _httpClient = new HttpClient();
+            addSportsmanButton.Enabled = false;
+            changeModeSportsmanMethod();
+            loadSportsmans();
+            sportsmansIdNumeric_ValueChanged(null,null);
+
         }
 
         private void changeModeSportsman_Click(object sender, EventArgs e)
         {
             changeModeSportsmanMethod();
+            clearSportsmanFields();
         }
         public void changeModeSportsmanMethod()
         {
-            addSportsmanButton.Enabled = !addSportsmanButton.Enabled;
-            editSportsmanButton.Enabled = !editSportsmanButton.Enabled;
-            deleteSportsmanButton.Enabled = !deleteSportsmanButton.Enabled;
-            nextPageSportsmansButton.Enabled = !nextPageSportsmansButton.Enabled;
+            if (addSportsmanButton.Enabled == true)
+            {
+                addSportsmanButton.Enabled = false;
+                editSportsmanButton.Enabled = true;
+                deleteSportsmanButton.Enabled = true;
+                nextPageSportsmansButton.Enabled = true;
+            }
+            else
+            {
+                addSportsmanButton.Enabled = true;
+                editSportsmanButton.Enabled = false;
+                deleteSportsmanButton.Enabled = false;
+                nextPageSportsmansButton.Enabled = false;
+            }
+           
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
         }
-
+        public void clearSportsmanFields()
+        {
+            sportsmanCategoryCombobox.SelectedIndex = -1;
+            sportsmanGenderCombobox.SelectedIndex = -1;
+            sportsmanEmailTextbox.Text = "";
+            sportsmanNameTextbox.Text = "";
+            sportsmanSponsorTextbox.Text = "";
+        }
         private void refreshSportsmanButton_ClickAsync(object sender, EventArgs e)
         {
             int page = int.Parse(currentPageSportsmans.Value.ToString());
@@ -88,7 +114,94 @@ namespace api_laravel
                 MessageBox.Show($"Error: {ex.Message}");
             }
         }
-    
+
+        private async void sportsmansIdNumeric_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (String.IsNullOrWhiteSpace(sportsmansIdNumeric.Value.ToString()))
+                {
+                    changeModeSportsmanMethod();
+                    return;
+                }
+
+                int input = Convert.ToInt32(sportsmansIdNumeric.Value);
+
+                string apiUrl = $"http://127.0.0.1:8000/api/sportsmans/{input}";
+                HttpResponseMessage response = await _httpClient.GetAsync(apiUrl);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    sportsmansIdNumeric.BackColor = System.Drawing.Color.LightGreen;
+                }
+                else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+                {
+                    sportsmansIdNumeric.BackColor = System.Drawing.Color.LightCoral;
+                }
+                else
+                {
+                    sportsmansIdNumeric.BackColor = System.Drawing.Color.White; // Reset back color
+                    MessageBox.Show($"Error: {response.StatusCode}");
+                }
+            }
+            catch (Exception ex)
+            {
+                sportsmansIdNumeric.BackColor = System.Drawing.Color.White; // Reset back color
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+        private async void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (String.IsNullOrWhiteSpace(sportsmansIdNumeric.Value.ToString()))
+                {
+                    MessageBox.Show("Please enter a valid sportsman ID.");
+                    return;
+                }
+
+                int input = Convert.ToInt32(sportsmansIdNumeric.Value);
+
+                string apiUrl = $"http://127.0.0.1:8000/api/sportsmans/{input}";
+                HttpResponseMessage response = await _httpClient.GetAsync(apiUrl);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string responseBody = await response.Content.ReadAsStringAsync();
+                    JObject responseObject = JObject.Parse(responseBody);
+                    JObject dataObject = (JObject)responseObject["data"];
+                    Sportsman sportsman = dataObject.ToObject<Sportsman>();
+
+                    // Assuming you have text boxes for each field, you can set their text values
+                    sportsmanNameTextbox.Text = sportsman.Name;
+                    sportsmanEmailTextbox.Text = sportsman.Email;
+                    sportsmanGenderCombobox.Text = sportsman.Gender;
+                    sportsmanCategoryCombobox.Text = sportsman.Category;
+                    sportsmanSponsorTextbox.Text = sportsman.Sponsor;
+
+
+                    addSportsmanButton.Enabled = true;
+                    changeModeSportsmanMethod();
+                }
+                else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+                {
+                    MessageBox.Show("Sportsman not found.");
+                    
+                }
+                else
+                {
+                    MessageBox.Show($"Error: {response.StatusCode}");
+                }
+
+              
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
     }
     public class Sportsman
     {
