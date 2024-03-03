@@ -249,6 +249,7 @@
             this.addSportsmanButton.TabIndex = 6;
             this.addSportsmanButton.Text = "Додати";
             this.addSportsmanButton.UseVisualStyleBackColor = true;
+            this.addSportsmanButton.Click += new System.EventHandler(this.addSportsmanButton_Click);
             // 
             // sportsmanCategoryCombobox
             // 

@@ -239,6 +239,69 @@ namespace api_laravel
                 MessageBox.Show($"Error: {ex.Message}");
             }
         }
+
+        private async void addSportsmanButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Gather data for the new sportsman from input fields
+                Sportsman newSportsman = new Sportsman
+                {
+                    Name = sportsmanNameTextbox.Text,
+                    Gender = sportsmanGenderCombobox.Text,
+                    Category = sportsmanCategoryCombobox.Text
+                };
+
+                // Check if email is filled
+                if (!string.IsNullOrWhiteSpace(sportsmanEmailTextbox.Text))
+                {
+                    newSportsman.Email = sportsmanEmailTextbox.Text;
+                }
+
+                // Check if sponsor is filled
+                if (!string.IsNullOrWhiteSpace(sportsmanSponsorTextbox.Text))
+                {
+                    newSportsman.Sponsor = sportsmanSponsorTextbox.Text;
+                }
+
+                var settings = new JsonSerializerSettings
+                {
+                    ContractResolver = new Newtonsoft.Json.Serialization.CamelCasePropertyNamesContractResolver()
+                };
+
+                var jsonBody = JsonConvert.SerializeObject(new
+                {
+                    newSportsman.Name,
+                    newSportsman.Email,
+                    newSportsman.Gender,
+                    newSportsman.Category,
+                    newSportsman.Sponsor
+                }, settings);
+
+                // Create the HTTP content with the JSON body
+                HttpContent content = new StringContent(jsonBody, Encoding.UTF8, "application/json");
+
+                // Send the POST request to create a new sportsman
+                HttpResponseMessage response = await _httpClient.PostAsync("http://localhost:8000/api/sportsmans", content);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    MessageBox.Show("New sportsman created successfully.");
+
+                    searchSportsmanTextbox.Text = newSportsman.Name;
+                    findSportsmanButton_Click(null,null);
+                }
+                else
+                {
+                    MessageBox.Show($"Error: {response.StatusCode}");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+
+        }
     }
     public class Sportsman
     {
