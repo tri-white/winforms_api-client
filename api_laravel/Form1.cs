@@ -25,22 +25,20 @@ namespace api_laravel
             InitializeComponent();
             _httpClient = new HttpClient();
 
-
             addSportsmanButton.Enabled = false;
             changeModeSportsmanMethod();
             loadSportsmans();
             sportsmansIdNumeric_ValueChanged(null,null);
 
-
-            //todo for competitions/regulations
-
             competitionAddButton.Enabled = false;
             changeModeCompetitionMethod();
             loadCompetitions();
+            competitionIdNumeric_ValueChanged(null, null);
 
             regulationsAddButton.Enabled = false;
             changeModeRegulationMethod();
             loadRegulations();
+            numericUpDown3_ValueChanged(null, null);
         }
 
         private void changeModeSportsman_Click(object sender, EventArgs e)
@@ -165,7 +163,7 @@ namespace api_laravel
         private void button2_Click(object sender, EventArgs e)
         {
             currentPageCompetitions.Value = 1;
-            
+            refreshCompetitionsButton_Click(null, null);
         }
 
 
@@ -179,7 +177,7 @@ namespace api_laravel
         private void regulationsSearchButton_Click(object sender, EventArgs e)
         {
             currentPageCompetitions.Value = 1;
-
+            regulationsRefreshButton_Click(null, null);
         }
 
         public async void loadSportsmans(string searchKey="", int page=1)
@@ -258,7 +256,6 @@ namespace api_laravel
                     JToken jsonResponse = JToken.Parse(responseBody);
                     JArray sportsmanArray = (JArray)jsonResponse["data"];
 
-                    // Deserialize the "data" array into a list of Sportsman 
                     List<Regulation> regulations = sportsmanArray.ToObject<List<Regulation>>();
 
                     dataGridView3.DataSource = regulations;
@@ -302,13 +299,13 @@ namespace api_laravel
                 }
                 else
                 {
-                    sportsmansIdNumeric.BackColor = System.Drawing.Color.White; // Reset back color
+                    sportsmansIdNumeric.BackColor = System.Drawing.Color.White; 
                     MessageBox.Show($"Error: {response.StatusCode}");
                 }
             }
             catch (Exception ex)
             {
-                sportsmansIdNumeric.BackColor = System.Drawing.Color.White; // Reset back color
+                sportsmansIdNumeric.BackColor = System.Drawing.Color.White; 
                 MessageBox.Show($"Error: {ex.Message}");
             }
         }
@@ -316,34 +313,34 @@ namespace api_laravel
         {
             try
             {
-                if (String.IsNullOrWhiteSpace(sportsmansIdNumeric.Value.ToString()))
+                if (String.IsNullOrWhiteSpace(competitionIdNumeric.Value.ToString()))
                 {
-                    changeModeSportsmanMethod();
+                    changeModeCompetitionMethod();
                     return;
                 }
 
-                int input = Convert.ToInt32(sportsmansIdNumeric.Value);
+                int input = Convert.ToInt32(competitionIdNumeric.Value);
 
-                string apiUrl = $"http://127.0.0.1:8000/api/sportsmans/{input}";
+                string apiUrl = $"http://127.0.0.1:8000/api/competitions/{input}";
                 HttpResponseMessage response = await _httpClient.GetAsync(apiUrl);
 
                 if (response.IsSuccessStatusCode)
                 {
-                    sportsmansIdNumeric.BackColor = System.Drawing.Color.LightGreen;
+                    competitionIdNumeric.BackColor = System.Drawing.Color.LightGreen;
                 }
                 else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
                 {
-                    sportsmansIdNumeric.BackColor = System.Drawing.Color.LightCoral;
+                    competitionIdNumeric.BackColor = System.Drawing.Color.LightCoral;
                 }
                 else
                 {
-                    sportsmansIdNumeric.BackColor = System.Drawing.Color.White; // Reset back color
+                    competitionIdNumeric.BackColor = System.Drawing.Color.White; 
                     MessageBox.Show($"Error: {response.StatusCode}");
                 }
             }
             catch (Exception ex)
             {
-                sportsmansIdNumeric.BackColor = System.Drawing.Color.White; // Reset back color
+                competitionIdNumeric.BackColor = System.Drawing.Color.White; 
                 MessageBox.Show($"Error: {ex.Message}");
             }
         }
@@ -353,34 +350,34 @@ namespace api_laravel
         {
             try
             {
-                if (String.IsNullOrWhiteSpace(sportsmansIdNumeric.Value.ToString()))
+                if (String.IsNullOrWhiteSpace(numericUpDown3.Value.ToString()))
                 {
                     changeModeSportsmanMethod();
                     return;
                 }
 
-                int input = Convert.ToInt32(sportsmansIdNumeric.Value);
+                int input = Convert.ToInt32(numericUpDown3.Value);
 
-                string apiUrl = $"http://127.0.0.1:8000/api/sportsmans/{input}";
+                string apiUrl = $"http://127.0.0.1:8000/api/regulations/{input}";
                 HttpResponseMessage response = await _httpClient.GetAsync(apiUrl);
 
                 if (response.IsSuccessStatusCode)
                 {
-                    sportsmansIdNumeric.BackColor = System.Drawing.Color.LightGreen;
+                    numericUpDown3.BackColor = System.Drawing.Color.LightGreen;
                 }
                 else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
                 {
-                    sportsmansIdNumeric.BackColor = System.Drawing.Color.LightCoral;
+                    numericUpDown3.BackColor = System.Drawing.Color.LightCoral;
                 }
                 else
                 {
-                    sportsmansIdNumeric.BackColor = System.Drawing.Color.White; // Reset back color
+                    numericUpDown3.BackColor = System.Drawing.Color.White; // Reset back color
                     MessageBox.Show($"Error: {response.StatusCode}");
                 }
             }
             catch (Exception ex)
             {
-                sportsmansIdNumeric.BackColor = System.Drawing.Color.White; // Reset back color
+                numericUpDown3.BackColor = System.Drawing.Color.White; // Reset back color
                 MessageBox.Show($"Error: {ex.Message}");
             }
         }
@@ -406,7 +403,6 @@ namespace api_laravel
                     JObject dataObject = (JObject)responseObject["data"];
                     Sportsman sportsman = dataObject.ToObject<Sportsman>();
 
-                    // Assuming you have text boxes for each field, you can set their text values
                     sportsmanNameTextbox.Text = sportsman.Name;
                     sportsmanEmailTextbox.Text = sportsman.Email;
                     sportsmanGenderCombobox.Text = sportsman.Gender;
@@ -439,15 +435,15 @@ namespace api_laravel
         {
             try
             {
-                if (String.IsNullOrWhiteSpace(sportsmansIdNumeric.Value.ToString()))
+                if (String.IsNullOrWhiteSpace(competitionIdNumeric.Value.ToString()))
                 {
-                    MessageBox.Show("Please enter a valid sportsman ID.");
+                    MessageBox.Show("Please enter a valid competition ID.");
                     return;
                 }
 
-                int input = Convert.ToInt32(sportsmansIdNumeric.Value);
+                int input = Convert.ToInt32(competitionIdNumeric.Value);
 
-                string apiUrl = $"http://127.0.0.1:8000/api/sportsmans/{input}";
+                string apiUrl = $"http://127.0.0.1:8000/api/competitions/{input}";
                 HttpResponseMessage response = await _httpClient.GetAsync(apiUrl);
 
                 if (response.IsSuccessStatusCode)
@@ -455,22 +451,20 @@ namespace api_laravel
                     string responseBody = await response.Content.ReadAsStringAsync();
                     JObject responseObject = JObject.Parse(responseBody);
                     JObject dataObject = (JObject)responseObject["data"];
-                    Sportsman sportsman = dataObject.ToObject<Sportsman>();
+                    Competition competition = dataObject.ToObject<Competition>();
 
-                    // Assuming you have text boxes for each field, you can set their text values
-                    sportsmanNameTextbox.Text = sportsman.Name;
-                    sportsmanEmailTextbox.Text = sportsman.Email;
-                    sportsmanGenderCombobox.Text = sportsman.Gender;
-                    sportsmanCategoryCombobox.Text = sportsman.Category;
-                    sportsmanSponsorTextbox.Text = sportsman.Sponsor;
+                    competitionNameTextbox.Text = competition.Name;
+                    competitionSportstypeCombobox.Text = competition.SportsType;
+                    competitionPrizepoolNumeric.Value = int.Parse(competition.PrizePool.ToString());
+                    competitionLocationTextbox.Text = competition.EventLocation;
+                    competitionDatetimePicker.Text = competition.EventDate;
 
-
-                    addSportsmanButton.Enabled = true;
-                    changeModeSportsmanMethod();
+                    competitionAddButton.Enabled = true;
+                    changeModeCompetitionMethod();
                 }
                 else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
                 {
-                    MessageBox.Show("Sportsman not found.");
+                    MessageBox.Show("Competiton not found.");
 
                 }
                 else
@@ -490,15 +484,15 @@ namespace api_laravel
         {
             try
             {
-                if (String.IsNullOrWhiteSpace(sportsmansIdNumeric.Value.ToString()))
+                if (String.IsNullOrWhiteSpace(numericUpDown3.Value.ToString()))
                 {
-                    MessageBox.Show("Please enter a valid sportsman ID.");
+                    MessageBox.Show("Please enter a valid regulation ID.");
                     return;
                 }
 
-                int input = Convert.ToInt32(sportsmansIdNumeric.Value);
+                int input = Convert.ToInt32(numericUpDown3.Value);
 
-                string apiUrl = $"http://127.0.0.1:8000/api/sportsmans/{input}";
+                string apiUrl = $"http://127.0.0.1:8000/api/regulations/{input}";
                 HttpResponseMessage response = await _httpClient.GetAsync(apiUrl);
 
                 if (response.IsSuccessStatusCode)
@@ -506,22 +500,20 @@ namespace api_laravel
                     string responseBody = await response.Content.ReadAsStringAsync();
                     JObject responseObject = JObject.Parse(responseBody);
                     JObject dataObject = (JObject)responseObject["data"];
-                    Sportsman sportsman = dataObject.ToObject<Sportsman>();
+                    Regulation regulation = dataObject.ToObject<Regulation>();
 
-                    // Assuming you have text boxes for each field, you can set their text values
-                    sportsmanNameTextbox.Text = sportsman.Name;
-                    sportsmanEmailTextbox.Text = sportsman.Email;
-                    sportsmanGenderCombobox.Text = sportsman.Gender;
-                    sportsmanCategoryCombobox.Text = sportsman.Category;
-                    sportsmanSponsorTextbox.Text = sportsman.Sponsor;
+                    regulationsNameTextbox.Text = regulation.Name;
+                    regulationsDescriptionTextbox.Text = regulation.Description;
+                    regulationsGenderCombobox.Text = regulation.Gender;
+                    regulationsRequirementsTextbox.Text = regulation.MinimalRequirements;
 
 
-                    addSportsmanButton.Enabled = true;
-                    changeModeSportsmanMethod();
+                    regulationsAddButton.Enabled = true;
+                    changeModeRegulationMethod();
                 }
                 else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
                 {
-                    MessageBox.Show("Sportsman not found.");
+                    MessageBox.Show("Regulation not found.");
 
                 }
                 else
