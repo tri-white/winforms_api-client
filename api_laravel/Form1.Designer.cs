@@ -54,6 +54,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.competitionsSearchButton = new System.Windows.Forms.TabPage();
+            this.competitionDatetimePicker = new System.Windows.Forms.DateTimePicker();
+            this.competitionPrizepoolNumeric = new System.Windows.Forms.NumericUpDown();
             this.competitionIdNumeric = new System.Windows.Forms.NumericUpDown();
             this.currentPageCompetitions = new System.Windows.Forms.NumericUpDown();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -97,14 +99,13 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.competitionDatetimePicker = new System.Windows.Forms.DateTimePicker();
-            this.competitionPrizepoolNumeric = new System.Windows.Forms.NumericUpDown();
             this.tabControl1.SuspendLayout();
             this.sportsmanOkButton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sportsmansIdNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.currentPageSportsmans)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.competitionsSearchButton.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.competitionPrizepoolNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.competitionIdNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.currentPageCompetitions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -112,7 +113,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.currentPageRegulationsNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.competitionPrizepoolNumeric)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -467,6 +467,37 @@
             this.competitionsSearchButton.Text = "Змагання";
             this.competitionsSearchButton.UseVisualStyleBackColor = true;
             // 
+            // competitionDatetimePicker
+            // 
+            this.competitionDatetimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.competitionDatetimePicker.Location = new System.Drawing.Point(1088, 176);
+            this.competitionDatetimePicker.Name = "competitionDatetimePicker";
+            this.competitionDatetimePicker.Size = new System.Drawing.Size(285, 38);
+            this.competitionDatetimePicker.TabIndex = 46;
+            // 
+            // competitionPrizepoolNumeric
+            // 
+            this.competitionPrizepoolNumeric.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.competitionPrizepoolNumeric.Location = new System.Drawing.Point(817, 338);
+            this.competitionPrizepoolNumeric.Maximum = new decimal(new int[] {
+            1215752192,
+            23,
+            0,
+            0});
+            this.competitionPrizepoolNumeric.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.competitionPrizepoolNumeric.Name = "competitionPrizepoolNumeric";
+            this.competitionPrizepoolNumeric.Size = new System.Drawing.Size(556, 38);
+            this.competitionPrizepoolNumeric.TabIndex = 45;
+            this.competitionPrizepoolNumeric.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // competitionIdNumeric
             // 
             this.competitionIdNumeric.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -489,6 +520,7 @@
             0,
             0,
             0});
+            this.competitionIdNumeric.ValueChanged += new System.EventHandler(this.competitionIdNumeric_ValueChanged);
             // 
             // currentPageCompetitions
             // 
@@ -512,6 +544,7 @@
             0,
             0,
             0});
+            this.currentPageCompetitions.ValueChanged += new System.EventHandler(this.currentPageCompetitions_ValueChanged);
             // 
             // dataGridView2
             // 
@@ -559,6 +592,7 @@
             this.button2.TabIndex = 37;
             this.button2.Text = "Пошук";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // competitionIdLoadButton
             // 
@@ -569,6 +603,7 @@
             this.competitionIdLoadButton.TabIndex = 36;
             this.competitionIdLoadButton.Text = "OK";
             this.competitionIdLoadButton.UseVisualStyleBackColor = true;
+            this.competitionIdLoadButton.Click += new System.EventHandler(this.competitionIdLoadButton_Click);
             // 
             // competitionChangeModeButton
             // 
@@ -580,6 +615,7 @@
             this.competitionChangeModeButton.TabIndex = 35;
             this.competitionChangeModeButton.Text = "X";
             this.competitionChangeModeButton.UseVisualStyleBackColor = true;
+            this.competitionChangeModeButton.Click += new System.EventHandler(this.competitionChangeModeButton_Click);
             // 
             // competitionDeleteButton
             // 
@@ -591,6 +627,7 @@
             this.competitionDeleteButton.TabIndex = 38;
             this.competitionDeleteButton.Text = "Видалити";
             this.competitionDeleteButton.UseVisualStyleBackColor = true;
+            this.competitionDeleteButton.Click += new System.EventHandler(this.competitionDeleteButton_Click);
             // 
             // competitionEditButton
             // 
@@ -602,6 +639,7 @@
             this.competitionEditButton.TabIndex = 34;
             this.competitionEditButton.Text = "Редагувати";
             this.competitionEditButton.UseVisualStyleBackColor = true;
+            this.competitionEditButton.Click += new System.EventHandler(this.competitionEditButton_Click);
             // 
             // refreshCompetitionsButton
             // 
@@ -612,6 +650,7 @@
             this.refreshCompetitionsButton.TabIndex = 33;
             this.refreshCompetitionsButton.Text = "Оновити";
             this.refreshCompetitionsButton.UseVisualStyleBackColor = true;
+            this.refreshCompetitionsButton.Click += new System.EventHandler(this.refreshCompetitionsButton_Click);
             // 
             // competitionAddButton
             // 
@@ -622,6 +661,7 @@
             this.competitionAddButton.TabIndex = 32;
             this.competitionAddButton.Text = "Додати";
             this.competitionAddButton.UseVisualStyleBackColor = true;
+            this.competitionAddButton.Click += new System.EventHandler(this.competitionAddButton_Click);
             // 
             // competitionSportstypeCombobox
             // 
@@ -761,6 +801,7 @@
             0,
             0,
             0});
+            this.numericUpDown3.ValueChanged += new System.EventHandler(this.numericUpDown3_ValueChanged);
             // 
             // currentPageRegulationsNumeric
             // 
@@ -784,6 +825,7 @@
             0,
             0,
             0});
+            this.currentPageRegulationsNumeric.ValueChanged += new System.EventHandler(this.currentPageRegulationsNumeric_ValueChanged);
             // 
             // dataGridView3
             // 
@@ -839,6 +881,7 @@
             this.regulationsSearchButton.TabIndex = 37;
             this.regulationsSearchButton.Text = "Пошук";
             this.regulationsSearchButton.UseVisualStyleBackColor = true;
+            this.regulationsSearchButton.Click += new System.EventHandler(this.regulationsSearchButton_Click);
             // 
             // regulationsLoadId
             // 
@@ -849,6 +892,7 @@
             this.regulationsLoadId.TabIndex = 36;
             this.regulationsLoadId.Text = "OK";
             this.regulationsLoadId.UseVisualStyleBackColor = true;
+            this.regulationsLoadId.Click += new System.EventHandler(this.regulationsLoadId_Click);
             // 
             // regulationsChangeModeButton
             // 
@@ -860,6 +904,7 @@
             this.regulationsChangeModeButton.TabIndex = 35;
             this.regulationsChangeModeButton.Text = "X";
             this.regulationsChangeModeButton.UseVisualStyleBackColor = true;
+            this.regulationsChangeModeButton.Click += new System.EventHandler(this.regulationsChangeModeButton_Click);
             // 
             // regulationsDeleteButton
             // 
@@ -871,6 +916,7 @@
             this.regulationsDeleteButton.TabIndex = 38;
             this.regulationsDeleteButton.Text = "Видалити";
             this.regulationsDeleteButton.UseVisualStyleBackColor = true;
+            this.regulationsDeleteButton.Click += new System.EventHandler(this.regulationsDeleteButton_Click);
             // 
             // regulationsEditButton
             // 
@@ -882,6 +928,7 @@
             this.regulationsEditButton.TabIndex = 34;
             this.regulationsEditButton.Text = "Редагувати";
             this.regulationsEditButton.UseVisualStyleBackColor = true;
+            this.regulationsEditButton.Click += new System.EventHandler(this.regulationsEditButton_Click);
             // 
             // regulationsRefreshButton
             // 
@@ -892,6 +939,7 @@
             this.regulationsRefreshButton.TabIndex = 33;
             this.regulationsRefreshButton.Text = "Оновити";
             this.regulationsRefreshButton.UseVisualStyleBackColor = true;
+            this.regulationsRefreshButton.Click += new System.EventHandler(this.regulationsRefreshButton_Click);
             // 
             // regulationsAddButton
             // 
@@ -902,6 +950,7 @@
             this.regulationsAddButton.TabIndex = 32;
             this.regulationsAddButton.Text = "Додати";
             this.regulationsAddButton.UseVisualStyleBackColor = true;
+            this.regulationsAddButton.Click += new System.EventHandler(this.regulationsAddButton_Click);
             // 
             // regulationsGenderCombobox
             // 
@@ -977,37 +1026,6 @@
             this.label20.TabIndex = 23;
             this.label20.Text = "Назва";
             // 
-            // competitionDatetimePicker
-            // 
-            this.competitionDatetimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.competitionDatetimePicker.Location = new System.Drawing.Point(1088, 176);
-            this.competitionDatetimePicker.Name = "competitionDatetimePicker";
-            this.competitionDatetimePicker.Size = new System.Drawing.Size(285, 38);
-            this.competitionDatetimePicker.TabIndex = 46;
-            // 
-            // competitionPrizepoolNumeric
-            // 
-            this.competitionPrizepoolNumeric.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.competitionPrizepoolNumeric.Location = new System.Drawing.Point(817, 338);
-            this.competitionPrizepoolNumeric.Maximum = new decimal(new int[] {
-            1215752192,
-            23,
-            0,
-            0});
-            this.competitionPrizepoolNumeric.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.competitionPrizepoolNumeric.Name = "competitionPrizepoolNumeric";
-            this.competitionPrizepoolNumeric.Size = new System.Drawing.Size(556, 38);
-            this.competitionPrizepoolNumeric.TabIndex = 45;
-            this.competitionPrizepoolNumeric.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1025,6 +1043,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.competitionsSearchButton.ResumeLayout(false);
             this.competitionsSearchButton.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.competitionPrizepoolNumeric)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.competitionIdNumeric)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.currentPageCompetitions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -1033,7 +1052,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.currentPageRegulationsNumeric)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.competitionPrizepoolNumeric)).EndInit();
             this.ResumeLayout(false);
 
         }
