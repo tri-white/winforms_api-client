@@ -39,7 +39,7 @@
             this.sportsmanNameTextbox = new System.Windows.Forms.TextBox();
             this.findSportsmanButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.nextPageSportsmansButton = new System.Windows.Forms.Button();
+            this.changeModeSportsmanButton = new System.Windows.Forms.Button();
             this.deleteSportsmanButton = new System.Windows.Forms.Button();
             this.editSportsmanButton = new System.Windows.Forms.Button();
             this.refreshSportsmanButton = new System.Windows.Forms.Button();
@@ -140,7 +140,7 @@
             this.sportsmanOkButton.Controls.Add(this.sportsmanNameTextbox);
             this.sportsmanOkButton.Controls.Add(this.findSportsmanButton);
             this.sportsmanOkButton.Controls.Add(this.button1);
-            this.sportsmanOkButton.Controls.Add(this.nextPageSportsmansButton);
+            this.sportsmanOkButton.Controls.Add(this.changeModeSportsmanButton);
             this.sportsmanOkButton.Controls.Add(this.deleteSportsmanButton);
             this.sportsmanOkButton.Controls.Add(this.editSportsmanButton);
             this.sportsmanOkButton.Controls.Add(this.refreshSportsmanButton);
@@ -278,17 +278,17 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // nextPageSportsmansButton
+            // changeModeSportsmanButton
             // 
-            this.nextPageSportsmansButton.Enabled = false;
-            this.nextPageSportsmansButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.nextPageSportsmansButton.Location = new System.Drawing.Point(1326, 403);
-            this.nextPageSportsmansButton.Name = "nextPageSportsmansButton";
-            this.nextPageSportsmansButton.Size = new System.Drawing.Size(47, 38);
-            this.nextPageSportsmansButton.TabIndex = 6;
-            this.nextPageSportsmansButton.Text = "X";
-            this.nextPageSportsmansButton.UseVisualStyleBackColor = true;
-            this.nextPageSportsmansButton.Click += new System.EventHandler(this.changeModeSportsman_Click);
+            this.changeModeSportsmanButton.Enabled = false;
+            this.changeModeSportsmanButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.changeModeSportsmanButton.Location = new System.Drawing.Point(1326, 403);
+            this.changeModeSportsmanButton.Name = "changeModeSportsmanButton";
+            this.changeModeSportsmanButton.Size = new System.Drawing.Size(47, 38);
+            this.changeModeSportsmanButton.TabIndex = 6;
+            this.changeModeSportsmanButton.Text = "X";
+            this.changeModeSportsmanButton.UseVisualStyleBackColor = true;
+            this.changeModeSportsmanButton.Click += new System.EventHandler(this.changeModeSportsman_Click);
             // 
             // deleteSportsmanButton
             // 
@@ -469,6 +469,7 @@
             // 
             // competitionDatetimePicker
             // 
+            this.competitionDatetimePicker.CustomFormat = "";
             this.competitionDatetimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.competitionDatetimePicker.Location = new System.Drawing.Point(1088, 176);
             this.competitionDatetimePicker.Name = "competitionDatetimePicker";
@@ -484,19 +485,9 @@
             23,
             0,
             0});
-            this.competitionPrizepoolNumeric.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.competitionPrizepoolNumeric.Name = "competitionPrizepoolNumeric";
             this.competitionPrizepoolNumeric.Size = new System.Drawing.Size(556, 38);
             this.competitionPrizepoolNumeric.TabIndex = 45;
-            this.competitionPrizepoolNumeric.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // competitionIdNumeric
             // 
@@ -1068,7 +1059,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox searchSportsmanTextbox;
         private System.Windows.Forms.Button findSportsmanButton;
-        private System.Windows.Forms.Button nextPageSportsmansButton;
+        private System.Windows.Forms.Button changeModeSportsmanButton;
         private System.Windows.Forms.Button deleteSportsmanButton;
         private System.Windows.Forms.Button editSportsmanButton;
         private System.Windows.Forms.TabPage regulationsIdNumeric;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Net.Http;
 using System.Runtime.CompilerServices;
@@ -35,10 +36,13 @@ namespace api_laravel
             loadCompetitions();
             competitionIdNumeric_ValueChanged(null, null);
 
+
             regulationsAddButton.Enabled = false;
             changeModeRegulationMethod();
             loadRegulations();
             numericUpDown3_ValueChanged(null, null);
+
+
         }
 
         private void changeModeSportsman_Click(object sender, EventArgs e)
@@ -65,6 +69,7 @@ namespace api_laravel
                 editSportsmanButton.Enabled = true;
                 deleteSportsmanButton.Enabled = true;
                 sportsmansIdNumeric.Enabled = false;
+                changeModeSportsmanButton.Enabled = true;
             }
             else
             {
@@ -72,6 +77,7 @@ namespace api_laravel
                 editSportsmanButton.Enabled = false;
                 deleteSportsmanButton.Enabled = false;
                 sportsmansIdNumeric.Enabled = true;
+                changeModeSportsmanButton.Enabled = false;
             }
 
         }
@@ -83,6 +89,7 @@ namespace api_laravel
                 competitionEditButton.Enabled = true;
                 competitionDeleteButton.Enabled = true;
                 competitionIdNumeric.Enabled = false;
+                competitionChangeModeButton.Enabled = true;
             }
             else
             {
@@ -90,6 +97,7 @@ namespace api_laravel
                 competitionEditButton.Enabled = false;
                 competitionDeleteButton.Enabled = false;
                 competitionIdNumeric.Enabled = true;
+                competitionChangeModeButton.Enabled = false;
             }
 
         }
@@ -101,6 +109,7 @@ namespace api_laravel
                 regulationsEditButton.Enabled = true;
                 regulationsDeleteButton.Enabled = true;
                 regulationsIdNumeric.Enabled = false;
+                regulationsChangeModeButton.Enabled = true;
             }
             else
             {
@@ -108,6 +117,7 @@ namespace api_laravel
                 regulationsEditButton.Enabled = false;
                 regulationsDeleteButton.Enabled = false;
                 regulationsIdNumeric.Enabled = true;
+                regulationsChangeModeButton.Enabled = false;
             }
 
         }
@@ -457,7 +467,11 @@ namespace api_laravel
                     competitionSportstypeCombobox.Text = competition.SportsType;
                     competitionPrizepoolNumeric.Value = int.Parse(competition.PrizePool.ToString());
                     competitionLocationTextbox.Text = competition.EventLocation;
+                    MessageBox.Show(competition.EventDate);
+
+                    //
                     competitionDatetimePicker.Text = competition.EventDate;
+
 
                     competitionAddButton.Enabled = true;
                     changeModeCompetitionMethod();
@@ -569,28 +583,29 @@ namespace api_laravel
         {
             try
             {
-                if (String.IsNullOrWhiteSpace(sportsmansIdNumeric.Value.ToString()))
+                if (String.IsNullOrWhiteSpace(competitionIdNumeric.Value.ToString()))
                 {
-                    MessageBox.Show("Please enter a valid sportsman ID.");
+                    MessageBox.Show("Please enter a valid competition ID.");
                     return;
                 }
 
-                int sportsmanId = Convert.ToInt32(sportsmansIdNumeric.Value);
-                string apiUrl = $"http://localhost:8000/api/sportsmans/{sportsmanId}";
+                int sportsmanId = Convert.ToInt32(competitionIdNumeric.Value);
+                string apiUrl = $"http://localhost:8000/api/competitions/{sportsmanId}";
 
                 HttpResponseMessage response = await _httpClient.DeleteAsync(apiUrl);
 
                 if (response.IsSuccessStatusCode)
                 {
-                    MessageBox.Show("Sportsman deleted successfully.");
+                    MessageBox.Show("Competition deleted successfully.");
 
-                    sportsmansIdNumeric_ValueChanged(null, null);
-                    changeModeSportsmanMethod();
-                    findSportsmanButton_Click(null, null);
+                    competitionIdNumeric_ValueChanged(null, null);
+                    changeModeCompetitionMethod();
+                    button2_Click(null, null);
+
                 }
                 else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
                 {
-                    MessageBox.Show("Sportsman not found.");
+                    MessageBox.Show("Competition not found.");
                 }
                 else
                 {
@@ -607,28 +622,28 @@ namespace api_laravel
         {
             try
             {
-                if (String.IsNullOrWhiteSpace(sportsmansIdNumeric.Value.ToString()))
+                if (String.IsNullOrWhiteSpace(numericUpDown3.Value.ToString()))
                 {
-                    MessageBox.Show("Please enter a valid sportsman ID.");
+                    MessageBox.Show("Please enter a valid regulation ID.");
                     return;
                 }
 
-                int sportsmanId = Convert.ToInt32(sportsmansIdNumeric.Value);
-                string apiUrl = $"http://localhost:8000/api/sportsmans/{sportsmanId}";
+                int sportsmanId = Convert.ToInt32(numericUpDown3.Value);
+                string apiUrl = $"http://localhost:8000/api/regulations/{sportsmanId}";
 
                 HttpResponseMessage response = await _httpClient.DeleteAsync(apiUrl);
 
                 if (response.IsSuccessStatusCode)
                 {
-                    MessageBox.Show("Sportsman deleted successfully.");
+                    MessageBox.Show("Regulation deleted successfully.");
+                    numericUpDown3_ValueChanged(null, null);
+                    changeModeRegulationMethod();
+                    regulationsSearchButton_Click(null, null);
 
-                    sportsmansIdNumeric_ValueChanged(null, null);
-                    changeModeSportsmanMethod();
-                    findSportsmanButton_Click(null, null);
                 }
                 else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
                 {
-                    MessageBox.Show("Sportsman not found.");
+                    MessageBox.Show("Regulation not found.");
                 }
                 else
                 {
@@ -709,30 +724,25 @@ namespace api_laravel
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(sportsmanNameTextbox.Text) ||
-                     string.IsNullOrWhiteSpace(sportsmanGenderCombobox.Text) ||
-                     string.IsNullOrWhiteSpace(sportsmanCategoryCombobox.Text))
+                if (string.IsNullOrWhiteSpace(competitionNameTextbox.Text) ||
+                     string.IsNullOrWhiteSpace(competitionLocationTextbox.Text) ||
+                     competitionSportstypeCombobox.SelectedIndex == -1
+
+                     )
                 {
-                    MessageBox.Show("Please fill in all required fields (Name, Gender, Category).");
+                    MessageBox.Show("Please fill in all required fields.");
                     return;
                 }
 
-                Sportsman newSportsman = new Sportsman
+                Competition newSportsman = new Competition
                 {
-                    Name = sportsmanNameTextbox.Text,
-                    Gender = sportsmanGenderCombobox.Text,
-                    Category = sportsmanCategoryCombobox.Text
+                   Name = competitionNameTextbox.Text,
+                   EventDate = competitionDatetimePicker.Text,
+                   EventLocation = competitionLocationTextbox.Text,
+                   PrizePool = competitionPrizepoolNumeric.Value.ToString(),
+                   SportsType = competitionSportstypeCombobox.Text,
                 };
 
-                if (!string.IsNullOrWhiteSpace(sportsmanEmailTextbox.Text))
-                {
-                    newSportsman.Email = sportsmanEmailTextbox.Text;
-                }
-
-                if (!string.IsNullOrWhiteSpace(sportsmanSponsorTextbox.Text))
-                {
-                    newSportsman.Sponsor = sportsmanSponsorTextbox.Text;
-                }
 
                 var settings = new JsonSerializerSettings
                 {
@@ -742,22 +752,22 @@ namespace api_laravel
                 var jsonBody = JsonConvert.SerializeObject(new
                 {
                     newSportsman.Name,
-                    newSportsman.Email,
-                    newSportsman.Gender,
-                    newSportsman.Category,
-                    newSportsman.Sponsor
+                    newSportsman.EventDate,
+                    newSportsman.EventLocation,
+                    newSportsman.PrizePool,
+                    newSportsman.SportsType
                 }, settings);
 
                 HttpContent content = new StringContent(jsonBody, Encoding.UTF8, "application/json");
 
-                HttpResponseMessage response = await _httpClient.PostAsync("http://localhost:8000/api/sportsmans", content);
+                HttpResponseMessage response = await _httpClient.PostAsync("http://localhost:8000/api/competitions", content);
 
                 if (response.IsSuccessStatusCode)
                 {
-                    MessageBox.Show("New sportsman created successfully.");
+                    MessageBox.Show("New competition created successfully.");
 
-                    searchSportsmanTextbox.Text = newSportsman.Name;
-                    findSportsmanButton_Click(null, null);
+                    searchInputCompetitions.Text = newSportsman.Name;
+                    button2_Click(null, null);
                 }
                 else
                 {
@@ -774,30 +784,23 @@ namespace api_laravel
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(sportsmanNameTextbox.Text) ||
-                     string.IsNullOrWhiteSpace(sportsmanGenderCombobox.Text) ||
-                     string.IsNullOrWhiteSpace(sportsmanCategoryCombobox.Text))
+                if (string.IsNullOrWhiteSpace(regulationsNameTextbox.Text) ||
+                     string.IsNullOrWhiteSpace(regulationsDescriptionTextbox.Text) ||
+                     string.IsNullOrWhiteSpace(regulationsRequirementsTextbox.Text) ||
+                     regulationsGenderCombobox.SelectedIndex==-1
+                     )
                 {
-                    MessageBox.Show("Please fill in all required fields (Name, Gender, Category).");
+                    MessageBox.Show("Please fill in all required fields.");
                     return;
                 }
 
-                Sportsman newSportsman = new Sportsman
+                Regulation newSportsman = new Regulation
                 {
-                    Name = sportsmanNameTextbox.Text,
-                    Gender = sportsmanGenderCombobox.Text,
-                    Category = sportsmanCategoryCombobox.Text
+                    Name = regulationsNameTextbox.Text,
+                    Description = regulationsDescriptionTextbox.Text,
+                    Gender = regulationsGenderCombobox.Text,
+                    MinimalRequirements=regulationsRequirementsTextbox.Text,
                 };
-
-                if (!string.IsNullOrWhiteSpace(sportsmanEmailTextbox.Text))
-                {
-                    newSportsman.Email = sportsmanEmailTextbox.Text;
-                }
-
-                if (!string.IsNullOrWhiteSpace(sportsmanSponsorTextbox.Text))
-                {
-                    newSportsman.Sponsor = sportsmanSponsorTextbox.Text;
-                }
 
                 var settings = new JsonSerializerSettings
                 {
@@ -807,22 +810,21 @@ namespace api_laravel
                 var jsonBody = JsonConvert.SerializeObject(new
                 {
                     newSportsman.Name,
-                    newSportsman.Email,
+                    newSportsman.Description,
                     newSportsman.Gender,
-                    newSportsman.Category,
-                    newSportsman.Sponsor
+                    newSportsman.MinimalRequirements,
                 }, settings);
 
                 HttpContent content = new StringContent(jsonBody, Encoding.UTF8, "application/json");
 
-                HttpResponseMessage response = await _httpClient.PostAsync("http://localhost:8000/api/sportsmans", content);
+                HttpResponseMessage response = await _httpClient.PostAsync("http://localhost:8000/api/regulations", content);
 
                 if (response.IsSuccessStatusCode)
                 {
-                    MessageBox.Show("New sportsman created successfully.");
+                    MessageBox.Show("New regulation created successfully.");
 
-                    searchSportsmanTextbox.Text = newSportsman.Name;
-                    findSportsmanButton_Click(null, null);
+                    regulationsSearchinputTextbox.Text = newSportsman.Name;
+                    regulationsSearchButton_Click(null, null);
                 }
                 else
                 {
@@ -898,25 +900,18 @@ namespace api_laravel
         {
             try
             {
-                int selectedSportsmanId = int.Parse(sportsmansIdNumeric.Value.ToString());
+                int selectedSportsmanId = int.Parse(competitionIdNumeric.Value.ToString());
 
-                Sportsman updatedSportsman = new Sportsman
+                Competition updatedSportsman = new Competition
                 {
-                    Name = sportsmanNameTextbox.Text,
-                    Gender = sportsmanGenderCombobox.Text,
-                    Category = sportsmanCategoryCombobox.Text
+                    Name = competitionNameTextbox.Text,
+                    EventDate = competitionDatetimePicker.Text,
+                    EventLocation = competitionLocationTextbox.Text,
+                    PrizePool = competitionPrizepoolNumeric.Value.ToString(),
+                    SportsType = competitionSportstypeCombobox.Text,
                 };
 
-                if (!string.IsNullOrWhiteSpace(sportsmanEmailTextbox.Text))
-                {
-                    updatedSportsman.Email = sportsmanEmailTextbox.Text;
-                }
-
-                if (!string.IsNullOrWhiteSpace(sportsmanSponsorTextbox.Text))
-                {
-                    updatedSportsman.Sponsor = sportsmanSponsorTextbox.Text;
-                }
-
+     
                 var settings = new JsonSerializerSettings
                 {
                     ContractResolver = new Newtonsoft.Json.Serialization.CamelCasePropertyNamesContractResolver()
@@ -925,24 +920,25 @@ namespace api_laravel
                 var jsonBody = JsonConvert.SerializeObject(new
                 {
                     updatedSportsman.Name,
-                    updatedSportsman.Email,
-                    updatedSportsman.Gender,
-                    updatedSportsman.Category,
-                    updatedSportsman.Sponsor
+                    updatedSportsman.EventDate,
+                    updatedSportsman.EventLocation,
+                    updatedSportsman.PrizePool,
+                    updatedSportsman.SportsType,
+
                 }, settings);
 
                 HttpContent content = new StringContent(jsonBody, Encoding.UTF8, "application/json");
 
-                string apiUrl = $"http://localhost:8000/api/sportsmans/{selectedSportsmanId}";
+                string apiUrl = $"http://localhost:8000/api/competitions/{selectedSportsmanId}";
 
                 HttpResponseMessage response = await _httpClient.PutAsync(apiUrl, content);
 
                 if (response.IsSuccessStatusCode)
                 {
-                    MessageBox.Show("Sportsman updated successfully.");
+                    MessageBox.Show("Competition updated successfully.");
 
-                    searchSportsmanTextbox.Text = updatedSportsman.Name;
-                    findSportsmanButton_Click(null, null);
+                    searchInputCompetitions.Text = updatedSportsman.Name;
+                    button2_Click(null, null);
                 }
                 else
                 {
@@ -959,24 +955,15 @@ namespace api_laravel
         {
             try
             {
-                int selectedSportsmanId = int.Parse(sportsmansIdNumeric.Value.ToString());
+                int selectedSportsmanId = int.Parse(numericUpDown3.Value.ToString());
 
-                Sportsman updatedSportsman = new Sportsman
+                Regulation updatedSportsman = new Regulation
                 {
-                    Name = sportsmanNameTextbox.Text,
-                    Gender = sportsmanGenderCombobox.Text,
-                    Category = sportsmanCategoryCombobox.Text
+                    Name = regulationsNameTextbox.Text,
+                    Description = regulationsDescriptionTextbox.Text,
+                    Gender = regulationsGenderCombobox.Text,
+                    MinimalRequirements = regulationsRequirementsTextbox.Text,
                 };
-
-                if (!string.IsNullOrWhiteSpace(sportsmanEmailTextbox.Text))
-                {
-                    updatedSportsman.Email = sportsmanEmailTextbox.Text;
-                }
-
-                if (!string.IsNullOrWhiteSpace(sportsmanSponsorTextbox.Text))
-                {
-                    updatedSportsman.Sponsor = sportsmanSponsorTextbox.Text;
-                }
 
                 var settings = new JsonSerializerSettings
                 {
@@ -986,24 +973,25 @@ namespace api_laravel
                 var jsonBody = JsonConvert.SerializeObject(new
                 {
                     updatedSportsman.Name,
-                    updatedSportsman.Email,
+                    updatedSportsman.Description,
                     updatedSportsman.Gender,
-                    updatedSportsman.Category,
-                    updatedSportsman.Sponsor
+                    updatedSportsman.MinimalRequirements,
+
                 }, settings);
 
                 HttpContent content = new StringContent(jsonBody, Encoding.UTF8, "application/json");
 
-                string apiUrl = $"http://localhost:8000/api/sportsmans/{selectedSportsmanId}";
+                string apiUrl = $"http://localhost:8000/api/regulations/{selectedSportsmanId}";
 
                 HttpResponseMessage response = await _httpClient.PutAsync(apiUrl, content);
 
                 if (response.IsSuccessStatusCode)
                 {
-                    MessageBox.Show("Sportsman updated successfully.");
+                    MessageBox.Show("Regulation updated successfully.");
 
-                    searchSportsmanTextbox.Text = updatedSportsman.Name;
-                    findSportsmanButton_Click(null, null);
+
+                    regulationsSearchinputTextbox.Text = updatedSportsman.Name;
+                    regulationsSearchButton_Click(null, null);
                 }
                 else
                 {
