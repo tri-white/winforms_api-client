@@ -53,23 +53,21 @@
             this.IdLabel1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.competitionsSearchButton = new System.Windows.Forms.TabPage();
+            this.competitionIdNumeric = new System.Windows.Forms.NumericUpDown();
             this.currentPageCompetitions = new System.Windows.Forms.NumericUpDown();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.searchInputCompetitions = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.competitionLocationTextbox = new System.Windows.Forms.TextBox();
+            this.competitionNameTextbox = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.competitionIdLoadButton = new System.Windows.Forms.Button();
+            this.competitionChangeModeButton = new System.Windows.Forms.Button();
+            this.competitionDeleteButton = new System.Windows.Forms.Button();
+            this.competitionEditButton = new System.Windows.Forms.Button();
             this.refreshCompetitionsButton = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.competitionAddButton = new System.Windows.Forms.Button();
+            this.competitionSportstypeCombobox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -77,43 +75,44 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.regulationsIdNumeric = new System.Windows.Forms.TabPage();
             this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
+            this.currentPageRegulationsNumeric = new System.Windows.Forms.NumericUpDown();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.regulationsSearchinputTextbox = new System.Windows.Forms.TextBox();
+            this.regulationsRequirementsTextbox = new System.Windows.Forms.TextBox();
+            this.regulationsDescriptionTextbox = new System.Windows.Forms.TextBox();
+            this.regulationsNameTextbox = new System.Windows.Forms.TextBox();
+            this.regulationsSearchButton = new System.Windows.Forms.Button();
+            this.regulationsLoadId = new System.Windows.Forms.Button();
+            this.regulationsChangeModeButton = new System.Windows.Forms.Button();
+            this.regulationsDeleteButton = new System.Windows.Forms.Button();
+            this.regulationsEditButton = new System.Windows.Forms.Button();
+            this.regulationsRefreshButton = new System.Windows.Forms.Button();
+            this.regulationsAddButton = new System.Windows.Forms.Button();
+            this.regulationsGenderCombobox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
+            this.competitionDatetimePicker = new System.Windows.Forms.DateTimePicker();
+            this.competitionPrizepoolNumeric = new System.Windows.Forms.NumericUpDown();
             this.tabControl1.SuspendLayout();
             this.sportsmanOkButton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sportsmansIdNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.currentPageSportsmans)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.competitionsSearchButton.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.competitionIdNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.currentPageCompetitions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.tabPage3.SuspendLayout();
+            this.regulationsIdNumeric.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.currentPageRegulationsNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.competitionPrizepoolNumeric)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -122,8 +121,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.sportsmanOkButton);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.competitionsSearchButton);
+            this.tabControl1.Controls.Add(this.regulationsIdNumeric);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -435,57 +434,57 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Ім\'я";
             // 
-            // tabPage2
+            // competitionsSearchButton
             // 
-            this.tabPage2.Controls.Add(this.numericUpDown1);
-            this.tabPage2.Controls.Add(this.currentPageCompetitions);
-            this.tabPage2.Controls.Add(this.dataGridView2);
-            this.tabPage2.Controls.Add(this.searchInputCompetitions);
-            this.tabPage2.Controls.Add(this.textBox2);
-            this.tabPage2.Controls.Add(this.textBox3);
-            this.tabPage2.Controls.Add(this.textBox4);
-            this.tabPage2.Controls.Add(this.button2);
-            this.tabPage2.Controls.Add(this.button3);
-            this.tabPage2.Controls.Add(this.button4);
-            this.tabPage2.Controls.Add(this.button5);
-            this.tabPage2.Controls.Add(this.button6);
-            this.tabPage2.Controls.Add(this.refreshCompetitionsButton);
-            this.tabPage2.Controls.Add(this.button8);
-            this.tabPage2.Controls.Add(this.comboBox1);
-            this.tabPage2.Controls.Add(this.comboBox2);
-            this.tabPage2.Controls.Add(this.label2);
-            this.tabPage2.Controls.Add(this.label9);
-            this.tabPage2.Controls.Add(this.label10);
-            this.tabPage2.Controls.Add(this.label11);
-            this.tabPage2.Controls.Add(this.label12);
-            this.tabPage2.Controls.Add(this.label13);
-            this.tabPage2.Controls.Add(this.label14);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1379, 523);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Змагання";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.competitionsSearchButton.Controls.Add(this.competitionDatetimePicker);
+            this.competitionsSearchButton.Controls.Add(this.competitionPrizepoolNumeric);
+            this.competitionsSearchButton.Controls.Add(this.competitionIdNumeric);
+            this.competitionsSearchButton.Controls.Add(this.currentPageCompetitions);
+            this.competitionsSearchButton.Controls.Add(this.dataGridView2);
+            this.competitionsSearchButton.Controls.Add(this.searchInputCompetitions);
+            this.competitionsSearchButton.Controls.Add(this.competitionLocationTextbox);
+            this.competitionsSearchButton.Controls.Add(this.competitionNameTextbox);
+            this.competitionsSearchButton.Controls.Add(this.button2);
+            this.competitionsSearchButton.Controls.Add(this.competitionIdLoadButton);
+            this.competitionsSearchButton.Controls.Add(this.competitionChangeModeButton);
+            this.competitionsSearchButton.Controls.Add(this.competitionDeleteButton);
+            this.competitionsSearchButton.Controls.Add(this.competitionEditButton);
+            this.competitionsSearchButton.Controls.Add(this.refreshCompetitionsButton);
+            this.competitionsSearchButton.Controls.Add(this.competitionAddButton);
+            this.competitionsSearchButton.Controls.Add(this.competitionSportstypeCombobox);
+            this.competitionsSearchButton.Controls.Add(this.label2);
+            this.competitionsSearchButton.Controls.Add(this.label9);
+            this.competitionsSearchButton.Controls.Add(this.label10);
+            this.competitionsSearchButton.Controls.Add(this.label11);
+            this.competitionsSearchButton.Controls.Add(this.label12);
+            this.competitionsSearchButton.Controls.Add(this.label13);
+            this.competitionsSearchButton.Controls.Add(this.label14);
+            this.competitionsSearchButton.Location = new System.Drawing.Point(4, 25);
+            this.competitionsSearchButton.Name = "competitionsSearchButton";
+            this.competitionsSearchButton.Padding = new System.Windows.Forms.Padding(3);
+            this.competitionsSearchButton.Size = new System.Drawing.Size(1379, 523);
+            this.competitionsSearchButton.TabIndex = 1;
+            this.competitionsSearchButton.Text = "Змагання";
+            this.competitionsSearchButton.UseVisualStyleBackColor = true;
             // 
-            // numericUpDown1
+            // competitionIdNumeric
             // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.numericUpDown1.Location = new System.Drawing.Point(910, 82);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.competitionIdNumeric.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.competitionIdNumeric.Location = new System.Drawing.Point(910, 82);
+            this.competitionIdNumeric.Maximum = new decimal(new int[] {
             1215752192,
             23,
             0,
             0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.competitionIdNumeric.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(265, 38);
-            this.numericUpDown1.TabIndex = 45;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.competitionIdNumeric.Name = "competitionIdNumeric";
+            this.competitionIdNumeric.Size = new System.Drawing.Size(265, 38);
+            this.competitionIdNumeric.TabIndex = 45;
+            this.competitionIdNumeric.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -535,29 +534,21 @@
             this.searchInputCompetitions.Size = new System.Drawing.Size(247, 38);
             this.searchInputCompetitions.TabIndex = 42;
             // 
-            // textBox2
+            // competitionLocationTextbox
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2.Location = new System.Drawing.Point(817, 338);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(556, 38);
-            this.textBox2.TabIndex = 41;
+            this.competitionLocationTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.competitionLocationTextbox.Location = new System.Drawing.Point(817, 253);
+            this.competitionLocationTextbox.Name = "competitionLocationTextbox";
+            this.competitionLocationTextbox.Size = new System.Drawing.Size(265, 38);
+            this.competitionLocationTextbox.TabIndex = 40;
             // 
-            // textBox3
+            // competitionNameTextbox
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox3.Location = new System.Drawing.Point(1088, 176);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(285, 38);
-            this.textBox3.TabIndex = 40;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox4.Location = new System.Drawing.Point(817, 176);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(265, 38);
-            this.textBox4.TabIndex = 39;
+            this.competitionNameTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.competitionNameTextbox.Location = new System.Drawing.Point(817, 176);
+            this.competitionNameTextbox.Name = "competitionNameTextbox";
+            this.competitionNameTextbox.Size = new System.Drawing.Size(265, 38);
+            this.competitionNameTextbox.TabIndex = 39;
             // 
             // button2
             // 
@@ -569,48 +560,48 @@
             this.button2.Text = "Пошук";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // competitionIdLoadButton
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(1185, 82);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(70, 38);
-            this.button3.TabIndex = 36;
-            this.button3.Text = "OK";
-            this.button3.UseVisualStyleBackColor = true;
+            this.competitionIdLoadButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.competitionIdLoadButton.Location = new System.Drawing.Point(1185, 82);
+            this.competitionIdLoadButton.Name = "competitionIdLoadButton";
+            this.competitionIdLoadButton.Size = new System.Drawing.Size(70, 38);
+            this.competitionIdLoadButton.TabIndex = 36;
+            this.competitionIdLoadButton.Text = "OK";
+            this.competitionIdLoadButton.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // competitionChangeModeButton
             // 
-            this.button4.Enabled = false;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.Location = new System.Drawing.Point(1326, 402);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(47, 38);
-            this.button4.TabIndex = 35;
-            this.button4.Text = "X";
-            this.button4.UseVisualStyleBackColor = true;
+            this.competitionChangeModeButton.Enabled = false;
+            this.competitionChangeModeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.competitionChangeModeButton.Location = new System.Drawing.Point(1326, 402);
+            this.competitionChangeModeButton.Name = "competitionChangeModeButton";
+            this.competitionChangeModeButton.Size = new System.Drawing.Size(47, 38);
+            this.competitionChangeModeButton.TabIndex = 35;
+            this.competitionChangeModeButton.Text = "X";
+            this.competitionChangeModeButton.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // competitionDeleteButton
             // 
-            this.button5.Enabled = false;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.Location = new System.Drawing.Point(1160, 402);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(160, 38);
-            this.button5.TabIndex = 38;
-            this.button5.Text = "Видалити";
-            this.button5.UseVisualStyleBackColor = true;
+            this.competitionDeleteButton.Enabled = false;
+            this.competitionDeleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.competitionDeleteButton.Location = new System.Drawing.Point(1160, 402);
+            this.competitionDeleteButton.Name = "competitionDeleteButton";
+            this.competitionDeleteButton.Size = new System.Drawing.Size(160, 38);
+            this.competitionDeleteButton.TabIndex = 38;
+            this.competitionDeleteButton.Text = "Видалити";
+            this.competitionDeleteButton.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // competitionEditButton
             // 
-            this.button6.Enabled = false;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button6.Location = new System.Drawing.Point(951, 402);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(203, 38);
-            this.button6.TabIndex = 34;
-            this.button6.Text = "Редагувати";
-            this.button6.UseVisualStyleBackColor = true;
+            this.competitionEditButton.Enabled = false;
+            this.competitionEditButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.competitionEditButton.Location = new System.Drawing.Point(951, 402);
+            this.competitionEditButton.Name = "competitionEditButton";
+            this.competitionEditButton.Size = new System.Drawing.Size(203, 38);
+            this.competitionEditButton.TabIndex = 34;
+            this.competitionEditButton.Text = "Редагувати";
+            this.competitionEditButton.UseVisualStyleBackColor = true;
             // 
             // refreshCompetitionsButton
             // 
@@ -622,43 +613,31 @@
             this.refreshCompetitionsButton.Text = "Оновити";
             this.refreshCompetitionsButton.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // competitionAddButton
             // 
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button8.Location = new System.Drawing.Point(811, 402);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(134, 38);
-            this.button8.TabIndex = 32;
-            this.button8.Text = "Додати";
-            this.button8.UseVisualStyleBackColor = true;
+            this.competitionAddButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.competitionAddButton.Location = new System.Drawing.Point(811, 402);
+            this.competitionAddButton.Name = "competitionAddButton";
+            this.competitionAddButton.Size = new System.Drawing.Size(134, 38);
+            this.competitionAddButton.TabIndex = 32;
+            this.competitionAddButton.Text = "Додати";
+            this.competitionAddButton.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // competitionSportstypeCombobox
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "tennis",
-            "marathon",
+            this.competitionSportstypeCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.competitionSportstypeCombobox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.competitionSportstypeCombobox.FormattingEnabled = true;
+            this.competitionSportstypeCombobox.Items.AddRange(new object[] {
+            "100m sprint",
+            "3km run",
             "spear throwing",
-            "athletics"});
-            this.comboBox1.Location = new System.Drawing.Point(1088, 252);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(285, 39);
-            this.comboBox1.TabIndex = 31;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "male",
-            "female"});
-            this.comboBox2.Location = new System.Drawing.Point(817, 252);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(265, 39);
-            this.comboBox2.TabIndex = 30;
+            "football",
+            "tennis"});
+            this.competitionSportstypeCombobox.Location = new System.Drawing.Point(1088, 252);
+            this.competitionSportstypeCombobox.Name = "competitionSportstypeCombobox";
+            this.competitionSportstypeCombobox.Size = new System.Drawing.Size(285, 39);
+            this.competitionSportstypeCombobox.TabIndex = 31;
             // 
             // label2
             // 
@@ -674,11 +653,11 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(1034, 303);
+            this.label9.Location = new System.Drawing.Point(981, 303);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(128, 32);
+            this.label9.Size = new System.Drawing.Size(221, 32);
             this.label9.TabIndex = 27;
-            this.label9.Text = "Спонсор";
+            this.label9.Text = "Призовий фонд";
             // 
             // label10
             // 
@@ -686,9 +665,9 @@
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label10.Location = new System.Drawing.Point(1082, 141);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(86, 32);
+            this.label10.Size = new System.Drawing.Size(246, 32);
             this.label10.TabIndex = 26;
-            this.label10.Text = "Email";
+            this.label10.Text = "Дата проведення";
             // 
             // label11
             // 
@@ -716,9 +695,9 @@
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label13.Location = new System.Drawing.Point(811, 217);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(91, 32);
+            this.label13.Size = new System.Drawing.Size(255, 32);
             this.label13.TabIndex = 29;
-            this.label13.Text = "Стать";
+            this.label13.Text = "Місце проведення";
             // 
             // label14
             // 
@@ -726,41 +705,39 @@
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label14.Location = new System.Drawing.Point(811, 141);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(61, 32);
+            this.label14.Size = new System.Drawing.Size(95, 32);
             this.label14.TabIndex = 23;
-            this.label14.Text = "Ім\'я";
+            this.label14.Text = "Назва";
             // 
-            // tabPage3
+            // regulationsIdNumeric
             // 
-            this.tabPage3.Controls.Add(this.numericUpDown3);
-            this.tabPage3.Controls.Add(this.numericUpDown4);
-            this.tabPage3.Controls.Add(this.dataGridView3);
-            this.tabPage3.Controls.Add(this.textBox5);
-            this.tabPage3.Controls.Add(this.textBox6);
-            this.tabPage3.Controls.Add(this.textBox7);
-            this.tabPage3.Controls.Add(this.textBox8);
-            this.tabPage3.Controls.Add(this.button9);
-            this.tabPage3.Controls.Add(this.button10);
-            this.tabPage3.Controls.Add(this.button11);
-            this.tabPage3.Controls.Add(this.button12);
-            this.tabPage3.Controls.Add(this.button13);
-            this.tabPage3.Controls.Add(this.button14);
-            this.tabPage3.Controls.Add(this.button15);
-            this.tabPage3.Controls.Add(this.comboBox3);
-            this.tabPage3.Controls.Add(this.comboBox4);
-            this.tabPage3.Controls.Add(this.label3);
-            this.tabPage3.Controls.Add(this.label15);
-            this.tabPage3.Controls.Add(this.label16);
-            this.tabPage3.Controls.Add(this.label17);
-            this.tabPage3.Controls.Add(this.label18);
-            this.tabPage3.Controls.Add(this.label19);
-            this.tabPage3.Controls.Add(this.label20);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1379, 523);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Нормативи";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.regulationsIdNumeric.Controls.Add(this.numericUpDown3);
+            this.regulationsIdNumeric.Controls.Add(this.currentPageRegulationsNumeric);
+            this.regulationsIdNumeric.Controls.Add(this.dataGridView3);
+            this.regulationsIdNumeric.Controls.Add(this.regulationsSearchinputTextbox);
+            this.regulationsIdNumeric.Controls.Add(this.regulationsRequirementsTextbox);
+            this.regulationsIdNumeric.Controls.Add(this.regulationsDescriptionTextbox);
+            this.regulationsIdNumeric.Controls.Add(this.regulationsNameTextbox);
+            this.regulationsIdNumeric.Controls.Add(this.regulationsSearchButton);
+            this.regulationsIdNumeric.Controls.Add(this.regulationsLoadId);
+            this.regulationsIdNumeric.Controls.Add(this.regulationsChangeModeButton);
+            this.regulationsIdNumeric.Controls.Add(this.regulationsDeleteButton);
+            this.regulationsIdNumeric.Controls.Add(this.regulationsEditButton);
+            this.regulationsIdNumeric.Controls.Add(this.regulationsRefreshButton);
+            this.regulationsIdNumeric.Controls.Add(this.regulationsAddButton);
+            this.regulationsIdNumeric.Controls.Add(this.regulationsGenderCombobox);
+            this.regulationsIdNumeric.Controls.Add(this.label3);
+            this.regulationsIdNumeric.Controls.Add(this.label15);
+            this.regulationsIdNumeric.Controls.Add(this.label16);
+            this.regulationsIdNumeric.Controls.Add(this.label18);
+            this.regulationsIdNumeric.Controls.Add(this.label19);
+            this.regulationsIdNumeric.Controls.Add(this.label20);
+            this.regulationsIdNumeric.Location = new System.Drawing.Point(4, 25);
+            this.regulationsIdNumeric.Name = "regulationsIdNumeric";
+            this.regulationsIdNumeric.Size = new System.Drawing.Size(1379, 523);
+            this.regulationsIdNumeric.TabIndex = 2;
+            this.regulationsIdNumeric.Text = "Нормативи";
+            this.regulationsIdNumeric.UseVisualStyleBackColor = true;
             // 
             // numericUpDown3
             // 
@@ -785,24 +762,24 @@
             0,
             0});
             // 
-            // numericUpDown4
+            // currentPageRegulationsNumeric
             // 
-            this.numericUpDown4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.numericUpDown4.Location = new System.Drawing.Point(685, 478);
-            this.numericUpDown4.Maximum = new decimal(new int[] {
+            this.currentPageRegulationsNumeric.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.currentPageRegulationsNumeric.Location = new System.Drawing.Point(685, 478);
+            this.currentPageRegulationsNumeric.Maximum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown4.Minimum = new decimal(new int[] {
+            this.currentPageRegulationsNumeric.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(120, 38);
-            this.numericUpDown4.TabIndex = 44;
-            this.numericUpDown4.Value = new decimal(new int[] {
+            this.currentPageRegulationsNumeric.Name = "currentPageRegulationsNumeric";
+            this.currentPageRegulationsNumeric.Size = new System.Drawing.Size(120, 38);
+            this.currentPageRegulationsNumeric.TabIndex = 44;
+            this.currentPageRegulationsNumeric.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -821,138 +798,124 @@
             this.dataGridView3.Size = new System.Drawing.Size(799, 422);
             this.dataGridView3.TabIndex = 43;
             // 
-            // textBox5
+            // regulationsSearchinputTextbox
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox5.Location = new System.Drawing.Point(6, 6);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(247, 38);
-            this.textBox5.TabIndex = 42;
+            this.regulationsSearchinputTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.regulationsSearchinputTextbox.Location = new System.Drawing.Point(6, 6);
+            this.regulationsSearchinputTextbox.Name = "regulationsSearchinputTextbox";
+            this.regulationsSearchinputTextbox.Size = new System.Drawing.Size(247, 38);
+            this.regulationsSearchinputTextbox.TabIndex = 42;
             // 
-            // textBox6
+            // regulationsRequirementsTextbox
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox6.Location = new System.Drawing.Point(817, 338);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(556, 38);
-            this.textBox6.TabIndex = 41;
+            this.regulationsRequirementsTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.regulationsRequirementsTextbox.Location = new System.Drawing.Point(1088, 280);
+            this.regulationsRequirementsTextbox.Name = "regulationsRequirementsTextbox";
+            this.regulationsRequirementsTextbox.Size = new System.Drawing.Size(285, 38);
+            this.regulationsRequirementsTextbox.TabIndex = 41;
             // 
-            // textBox7
+            // regulationsDescriptionTextbox
             // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox7.Location = new System.Drawing.Point(1088, 176);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(285, 38);
-            this.textBox7.TabIndex = 40;
+            this.regulationsDescriptionTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.regulationsDescriptionTextbox.Location = new System.Drawing.Point(1088, 204);
+            this.regulationsDescriptionTextbox.Name = "regulationsDescriptionTextbox";
+            this.regulationsDescriptionTextbox.Size = new System.Drawing.Size(285, 38);
+            this.regulationsDescriptionTextbox.TabIndex = 40;
             // 
-            // textBox8
+            // regulationsNameTextbox
             // 
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox8.Location = new System.Drawing.Point(817, 176);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(265, 38);
-            this.textBox8.TabIndex = 39;
+            this.regulationsNameTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.regulationsNameTextbox.Location = new System.Drawing.Point(817, 204);
+            this.regulationsNameTextbox.Name = "regulationsNameTextbox";
+            this.regulationsNameTextbox.Size = new System.Drawing.Size(265, 38);
+            this.regulationsNameTextbox.TabIndex = 39;
             // 
-            // button9
+            // regulationsSearchButton
             // 
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button9.Location = new System.Drawing.Point(259, 6);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(132, 38);
-            this.button9.TabIndex = 37;
-            this.button9.Text = "Пошук";
-            this.button9.UseVisualStyleBackColor = true;
+            this.regulationsSearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.regulationsSearchButton.Location = new System.Drawing.Point(259, 6);
+            this.regulationsSearchButton.Name = "regulationsSearchButton";
+            this.regulationsSearchButton.Size = new System.Drawing.Size(132, 38);
+            this.regulationsSearchButton.TabIndex = 37;
+            this.regulationsSearchButton.Text = "Пошук";
+            this.regulationsSearchButton.UseVisualStyleBackColor = true;
             // 
-            // button10
+            // regulationsLoadId
             // 
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button10.Location = new System.Drawing.Point(1185, 82);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(70, 38);
-            this.button10.TabIndex = 36;
-            this.button10.Text = "OK";
-            this.button10.UseVisualStyleBackColor = true;
+            this.regulationsLoadId.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.regulationsLoadId.Location = new System.Drawing.Point(1185, 82);
+            this.regulationsLoadId.Name = "regulationsLoadId";
+            this.regulationsLoadId.Size = new System.Drawing.Size(70, 38);
+            this.regulationsLoadId.TabIndex = 36;
+            this.regulationsLoadId.Text = "OK";
+            this.regulationsLoadId.UseVisualStyleBackColor = true;
             // 
-            // button11
+            // regulationsChangeModeButton
             // 
-            this.button11.Enabled = false;
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button11.Location = new System.Drawing.Point(1326, 402);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(47, 38);
-            this.button11.TabIndex = 35;
-            this.button11.Text = "X";
-            this.button11.UseVisualStyleBackColor = true;
+            this.regulationsChangeModeButton.Enabled = false;
+            this.regulationsChangeModeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.regulationsChangeModeButton.Location = new System.Drawing.Point(1326, 402);
+            this.regulationsChangeModeButton.Name = "regulationsChangeModeButton";
+            this.regulationsChangeModeButton.Size = new System.Drawing.Size(47, 38);
+            this.regulationsChangeModeButton.TabIndex = 35;
+            this.regulationsChangeModeButton.Text = "X";
+            this.regulationsChangeModeButton.UseVisualStyleBackColor = true;
             // 
-            // button12
+            // regulationsDeleteButton
             // 
-            this.button12.Enabled = false;
-            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button12.Location = new System.Drawing.Point(1160, 402);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(160, 38);
-            this.button12.TabIndex = 38;
-            this.button12.Text = "Видалити";
-            this.button12.UseVisualStyleBackColor = true;
+            this.regulationsDeleteButton.Enabled = false;
+            this.regulationsDeleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.regulationsDeleteButton.Location = new System.Drawing.Point(1160, 402);
+            this.regulationsDeleteButton.Name = "regulationsDeleteButton";
+            this.regulationsDeleteButton.Size = new System.Drawing.Size(160, 38);
+            this.regulationsDeleteButton.TabIndex = 38;
+            this.regulationsDeleteButton.Text = "Видалити";
+            this.regulationsDeleteButton.UseVisualStyleBackColor = true;
             // 
-            // button13
+            // regulationsEditButton
             // 
-            this.button13.Enabled = false;
-            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button13.Location = new System.Drawing.Point(951, 402);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(203, 38);
-            this.button13.TabIndex = 34;
-            this.button13.Text = "Редагувати";
-            this.button13.UseVisualStyleBackColor = true;
+            this.regulationsEditButton.Enabled = false;
+            this.regulationsEditButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.regulationsEditButton.Location = new System.Drawing.Point(951, 402);
+            this.regulationsEditButton.Name = "regulationsEditButton";
+            this.regulationsEditButton.Size = new System.Drawing.Size(203, 38);
+            this.regulationsEditButton.TabIndex = 34;
+            this.regulationsEditButton.Text = "Редагувати";
+            this.regulationsEditButton.UseVisualStyleBackColor = true;
             // 
-            // button14
+            // regulationsRefreshButton
             // 
-            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button14.Location = new System.Drawing.Point(6, 478);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(160, 38);
-            this.button14.TabIndex = 33;
-            this.button14.Text = "Оновити";
-            this.button14.UseVisualStyleBackColor = true;
+            this.regulationsRefreshButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.regulationsRefreshButton.Location = new System.Drawing.Point(6, 478);
+            this.regulationsRefreshButton.Name = "regulationsRefreshButton";
+            this.regulationsRefreshButton.Size = new System.Drawing.Size(160, 38);
+            this.regulationsRefreshButton.TabIndex = 33;
+            this.regulationsRefreshButton.Text = "Оновити";
+            this.regulationsRefreshButton.UseVisualStyleBackColor = true;
             // 
-            // button15
+            // regulationsAddButton
             // 
-            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button15.Location = new System.Drawing.Point(811, 402);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(134, 38);
-            this.button15.TabIndex = 32;
-            this.button15.Text = "Додати";
-            this.button15.UseVisualStyleBackColor = true;
+            this.regulationsAddButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.regulationsAddButton.Location = new System.Drawing.Point(811, 402);
+            this.regulationsAddButton.Name = "regulationsAddButton";
+            this.regulationsAddButton.Size = new System.Drawing.Size(134, 38);
+            this.regulationsAddButton.TabIndex = 32;
+            this.regulationsAddButton.Text = "Додати";
+            this.regulationsAddButton.UseVisualStyleBackColor = true;
             // 
-            // comboBox3
+            // regulationsGenderCombobox
             // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "tennis",
-            "marathon",
-            "spear throwing",
-            "athletics"});
-            this.comboBox3.Location = new System.Drawing.Point(1088, 252);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(285, 39);
-            this.comboBox3.TabIndex = 31;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
+            this.regulationsGenderCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.regulationsGenderCombobox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.regulationsGenderCombobox.FormattingEnabled = true;
+            this.regulationsGenderCombobox.Items.AddRange(new object[] {
             "male",
-            "female"});
-            this.comboBox4.Location = new System.Drawing.Point(817, 252);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(265, 39);
-            this.comboBox4.TabIndex = 30;
+            "female",
+            "unisex"});
+            this.regulationsGenderCombobox.Location = new System.Drawing.Point(817, 280);
+            this.regulationsGenderCombobox.Name = "regulationsGenderCombobox";
+            this.regulationsGenderCombobox.Size = new System.Drawing.Size(265, 39);
+            this.regulationsGenderCombobox.TabIndex = 30;
             // 
             // label3
             // 
@@ -968,31 +931,21 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label15.Location = new System.Drawing.Point(1034, 303);
+            this.label15.Location = new System.Drawing.Point(1082, 245);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(128, 32);
+            this.label15.Size = new System.Drawing.Size(112, 32);
             this.label15.TabIndex = 27;
-            this.label15.Text = "Спонсор";
+            this.label15.Text = "Вимоги";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label16.Location = new System.Drawing.Point(1082, 141);
+            this.label16.Location = new System.Drawing.Point(1082, 169);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(86, 32);
+            this.label16.Size = new System.Drawing.Size(82, 32);
             this.label16.TabIndex = 26;
-            this.label16.Text = "Email";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label17.Location = new System.Drawing.Point(1082, 217);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(161, 32);
-            this.label17.TabIndex = 25;
-            this.label17.Text = "Вид спорту";
+            this.label16.Text = "Опис";
             // 
             // label18
             // 
@@ -1008,7 +961,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label19.Location = new System.Drawing.Point(811, 217);
+            this.label19.Location = new System.Drawing.Point(811, 245);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(91, 32);
             this.label19.TabIndex = 29;
@@ -1018,11 +971,42 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label20.Location = new System.Drawing.Point(811, 141);
+            this.label20.Location = new System.Drawing.Point(811, 169);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(61, 32);
+            this.label20.Size = new System.Drawing.Size(95, 32);
             this.label20.TabIndex = 23;
-            this.label20.Text = "Ім\'я";
+            this.label20.Text = "Назва";
+            // 
+            // competitionDatetimePicker
+            // 
+            this.competitionDatetimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.competitionDatetimePicker.Location = new System.Drawing.Point(1088, 176);
+            this.competitionDatetimePicker.Name = "competitionDatetimePicker";
+            this.competitionDatetimePicker.Size = new System.Drawing.Size(285, 38);
+            this.competitionDatetimePicker.TabIndex = 46;
+            // 
+            // competitionPrizepoolNumeric
+            // 
+            this.competitionPrizepoolNumeric.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.competitionPrizepoolNumeric.Location = new System.Drawing.Point(817, 338);
+            this.competitionPrizepoolNumeric.Maximum = new decimal(new int[] {
+            1215752192,
+            23,
+            0,
+            0});
+            this.competitionPrizepoolNumeric.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.competitionPrizepoolNumeric.Name = "competitionPrizepoolNumeric";
+            this.competitionPrizepoolNumeric.Size = new System.Drawing.Size(556, 38);
+            this.competitionPrizepoolNumeric.TabIndex = 45;
+            this.competitionPrizepoolNumeric.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // Form1
             // 
@@ -1039,16 +1023,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.sportsmansIdNumeric)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.currentPageSportsmans)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.competitionsSearchButton.ResumeLayout(false);
+            this.competitionsSearchButton.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.competitionIdNumeric)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.currentPageCompetitions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
+            this.regulationsIdNumeric.ResumeLayout(false);
+            this.regulationsIdNumeric.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.currentPageRegulationsNumeric)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.competitionPrizepoolNumeric)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1061,14 +1046,14 @@
         private System.Windows.Forms.Button addSportsmanButton;
         private System.Windows.Forms.ComboBox sportsmanGenderCombobox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage competitionsSearchButton;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox searchSportsmanTextbox;
         private System.Windows.Forms.Button findSportsmanButton;
         private System.Windows.Forms.Button nextPageSportsmansButton;
         private System.Windows.Forms.Button deleteSportsmanButton;
         private System.Windows.Forms.Button editSportsmanButton;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage regulationsIdNumeric;
         private System.Windows.Forms.TextBox sportsmanSponsorTextbox;
         private System.Windows.Forms.TextBox sportsmanEmailTextbox;
         private System.Windows.Forms.ComboBox sportsmanCategoryCombobox;
@@ -1082,22 +1067,20 @@
         private System.Windows.Forms.Label IdLabel1;
         private System.Windows.Forms.NumericUpDown sportsmansIdNumeric;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown competitionIdNumeric;
         private System.Windows.Forms.NumericUpDown currentPageCompetitions;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.TextBox searchInputCompetitions;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox competitionLocationTextbox;
+        private System.Windows.Forms.TextBox competitionNameTextbox;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button competitionIdLoadButton;
+        private System.Windows.Forms.Button competitionChangeModeButton;
+        private System.Windows.Forms.Button competitionDeleteButton;
+        private System.Windows.Forms.Button competitionEditButton;
         private System.Windows.Forms.Button refreshCompetitionsButton;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Button competitionAddButton;
+        private System.Windows.Forms.ComboBox competitionSportstypeCombobox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
@@ -1106,28 +1089,28 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.NumericUpDown numericUpDown4;
+        private System.Windows.Forms.NumericUpDown currentPageRegulationsNumeric;
         private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.TextBox regulationsSearchinputTextbox;
+        private System.Windows.Forms.TextBox regulationsRequirementsTextbox;
+        private System.Windows.Forms.TextBox regulationsDescriptionTextbox;
+        private System.Windows.Forms.TextBox regulationsNameTextbox;
+        private System.Windows.Forms.Button regulationsSearchButton;
+        private System.Windows.Forms.Button regulationsLoadId;
+        private System.Windows.Forms.Button regulationsChangeModeButton;
+        private System.Windows.Forms.Button regulationsDeleteButton;
+        private System.Windows.Forms.Button regulationsEditButton;
+        private System.Windows.Forms.Button regulationsRefreshButton;
+        private System.Windows.Forms.Button regulationsAddButton;
+        private System.Windows.Forms.ComboBox regulationsGenderCombobox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.DateTimePicker competitionDatetimePicker;
+        private System.Windows.Forms.NumericUpDown competitionPrizepoolNumeric;
     }
 }
 
