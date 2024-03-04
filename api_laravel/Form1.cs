@@ -71,16 +71,14 @@ namespace api_laravel
         private void refreshSportsmanButton_ClickAsync(object sender, EventArgs e)
         {
             int page = int.Parse(currentPageSportsmans.Value.ToString());
+            string search = searchSportsmanTextbox.Text.ToString();
+            loadSportsmans(search,page);
 
-            loadSportsmans("",page);
-
-            currentPageSportsmans.Value = page;
         }
         private void findSportsmanButton_Click(object sender, EventArgs e)
         {
-            loadSportsmans(searchSportsmanTextbox.Text.ToString(), 1);
-
             currentPageSportsmans.Value = 1;
+            refreshSportsmanButton_ClickAsync(null, null);
 
         }
         public async void loadSportsmans(string searchKey="", int page=1)
@@ -369,6 +367,10 @@ namespace api_laravel
             }
         }
 
+        private void currentPageSportsmans_ValueChanged(object sender, EventArgs e)
+        {
+            refreshSportsmanButton_ClickAsync(null, null);
+        }
     }
     public class Sportsman
     {
