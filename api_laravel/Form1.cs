@@ -360,34 +360,34 @@ namespace api_laravel
         {
             try
             {
-                if (String.IsNullOrWhiteSpace(numericUpDown3.Value.ToString()))
+                if (String.IsNullOrWhiteSpace(regulationsIdNumeric.Value.ToString()))
                 {
                     changeModeSportsmanMethod();
                     return;
                 }
 
-                int input = Convert.ToInt32(numericUpDown3.Value);
+                int input = Convert.ToInt32(regulationsIdNumeric.Value);
 
                 string apiUrl = $"http://127.0.0.1:8000/api/regulations/{input}";
                 HttpResponseMessage response = await _httpClient.GetAsync(apiUrl);
 
                 if (response.IsSuccessStatusCode)
                 {
-                    numericUpDown3.BackColor = System.Drawing.Color.LightGreen;
+                    regulationsIdNumeric.BackColor = System.Drawing.Color.LightGreen;
                 }
                 else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
                 {
-                    numericUpDown3.BackColor = System.Drawing.Color.LightCoral;
+                    regulationsIdNumeric.BackColor = System.Drawing.Color.LightCoral;
                 }
                 else
                 {
-                    numericUpDown3.BackColor = System.Drawing.Color.White; // Reset back color
+                    regulationsIdNumeric.BackColor = System.Drawing.Color.White; // Reset back color
                     MessageBox.Show($"Error: {response.StatusCode}");
                 }
             }
             catch (Exception ex)
             {
-                numericUpDown3.BackColor = System.Drawing.Color.White; // Reset back color
+                regulationsIdNumeric.BackColor = System.Drawing.Color.White; // Reset back color
                 MessageBox.Show($"Error: {ex.Message}");
             }
         }
@@ -498,13 +498,13 @@ namespace api_laravel
         {
             try
             {
-                if (String.IsNullOrWhiteSpace(numericUpDown3.Value.ToString()))
+                if (String.IsNullOrWhiteSpace(regulationsIdNumeric.Value.ToString()))
                 {
                     MessageBox.Show("Please enter a valid regulation ID.");
                     return;
                 }
 
-                int input = Convert.ToInt32(numericUpDown3.Value);
+                int input = Convert.ToInt32(regulationsIdNumeric.Value);
 
                 string apiUrl = $"http://127.0.0.1:8000/api/regulations/{input}";
                 HttpResponseMessage response = await _httpClient.GetAsync(apiUrl);
@@ -622,13 +622,13 @@ namespace api_laravel
         {
             try
             {
-                if (String.IsNullOrWhiteSpace(numericUpDown3.Value.ToString()))
+                if (String.IsNullOrWhiteSpace(regulationsIdNumeric.Value.ToString()))
                 {
                     MessageBox.Show("Please enter a valid regulation ID.");
                     return;
                 }
 
-                int sportsmanId = Convert.ToInt32(numericUpDown3.Value);
+                int sportsmanId = Convert.ToInt32(regulationsIdNumeric.Value);
                 string apiUrl = $"http://localhost:8000/api/regulations/{sportsmanId}";
 
                 HttpResponseMessage response = await _httpClient.DeleteAsync(apiUrl);
@@ -799,7 +799,7 @@ namespace api_laravel
                     Name = regulationsNameTextbox.Text,
                     Description = regulationsDescriptionTextbox.Text,
                     Gender = regulationsGenderCombobox.Text,
-                    MinimalRequirements=regulationsRequirementsTextbox.Text,
+                    MinimalRequirements = regulationsRequirementsTextbox.Text
                 };
 
                 var settings = new JsonSerializerSettings
@@ -811,9 +811,10 @@ namespace api_laravel
                 {
                     newSportsman.Name,
                     newSportsman.Description,
-                    newSportsman.Gender,
-                    newSportsman.MinimalRequirements,
+                    minimal_requirements = newSportsman.MinimalRequirements,
+                    newSportsman.Gender
                 }, settings);
+
 
                 HttpContent content = new StringContent(jsonBody, Encoding.UTF8, "application/json");
 
@@ -955,7 +956,7 @@ namespace api_laravel
         {
             try
             {
-                int selectedSportsmanId = int.Parse(numericUpDown3.Value.ToString());
+                int selectedSportsmanId = int.Parse(regulationsIdNumeric.Value.ToString());
 
                 Regulation updatedSportsman = new Regulation
                 {
@@ -975,7 +976,7 @@ namespace api_laravel
                     updatedSportsman.Name,
                     updatedSportsman.Description,
                     updatedSportsman.Gender,
-                    updatedSportsman.MinimalRequirements,
+                    minimal_requirements = updatedSportsman.MinimalRequirements,
 
                 }, settings);
 

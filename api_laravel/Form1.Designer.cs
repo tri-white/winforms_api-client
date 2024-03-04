@@ -77,8 +77,8 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.regulationsIdNumeric = new System.Windows.Forms.TabPage();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.regulationsForm = new System.Windows.Forms.TabPage();
+            this.regulationsIdNumeric = new System.Windows.Forms.NumericUpDown();
             this.currentPageRegulationsNumeric = new System.Windows.Forms.NumericUpDown();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.regulationsSearchinputTextbox = new System.Windows.Forms.TextBox();
@@ -109,8 +109,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.competitionIdNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.currentPageCompetitions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.regulationsIdNumeric.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            this.regulationsForm.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.regulationsIdNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.currentPageRegulationsNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
@@ -122,7 +122,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.sportsmanOkButton);
             this.tabControl1.Controls.Add(this.competitionsSearchButton);
-            this.tabControl1.Controls.Add(this.regulationsIdNumeric);
+            this.tabControl1.Controls.Add(this.regulationsForm);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -740,59 +740,59 @@
             this.label14.TabIndex = 23;
             this.label14.Text = "Назва";
             // 
+            // regulationsForm
+            // 
+            this.regulationsForm.Controls.Add(this.regulationsIdNumeric);
+            this.regulationsForm.Controls.Add(this.currentPageRegulationsNumeric);
+            this.regulationsForm.Controls.Add(this.dataGridView3);
+            this.regulationsForm.Controls.Add(this.regulationsSearchinputTextbox);
+            this.regulationsForm.Controls.Add(this.regulationsRequirementsTextbox);
+            this.regulationsForm.Controls.Add(this.regulationsDescriptionTextbox);
+            this.regulationsForm.Controls.Add(this.regulationsNameTextbox);
+            this.regulationsForm.Controls.Add(this.regulationsSearchButton);
+            this.regulationsForm.Controls.Add(this.regulationsLoadId);
+            this.regulationsForm.Controls.Add(this.regulationsChangeModeButton);
+            this.regulationsForm.Controls.Add(this.regulationsDeleteButton);
+            this.regulationsForm.Controls.Add(this.regulationsEditButton);
+            this.regulationsForm.Controls.Add(this.regulationsRefreshButton);
+            this.regulationsForm.Controls.Add(this.regulationsAddButton);
+            this.regulationsForm.Controls.Add(this.regulationsGenderCombobox);
+            this.regulationsForm.Controls.Add(this.label3);
+            this.regulationsForm.Controls.Add(this.label15);
+            this.regulationsForm.Controls.Add(this.label16);
+            this.regulationsForm.Controls.Add(this.label18);
+            this.regulationsForm.Controls.Add(this.label19);
+            this.regulationsForm.Controls.Add(this.label20);
+            this.regulationsForm.Location = new System.Drawing.Point(4, 25);
+            this.regulationsForm.Name = "regulationsForm";
+            this.regulationsForm.Size = new System.Drawing.Size(1379, 523);
+            this.regulationsForm.TabIndex = 2;
+            this.regulationsForm.Text = "Нормативи";
+            this.regulationsForm.UseVisualStyleBackColor = true;
+            // 
             // regulationsIdNumeric
             // 
-            this.regulationsIdNumeric.Controls.Add(this.numericUpDown3);
-            this.regulationsIdNumeric.Controls.Add(this.currentPageRegulationsNumeric);
-            this.regulationsIdNumeric.Controls.Add(this.dataGridView3);
-            this.regulationsIdNumeric.Controls.Add(this.regulationsSearchinputTextbox);
-            this.regulationsIdNumeric.Controls.Add(this.regulationsRequirementsTextbox);
-            this.regulationsIdNumeric.Controls.Add(this.regulationsDescriptionTextbox);
-            this.regulationsIdNumeric.Controls.Add(this.regulationsNameTextbox);
-            this.regulationsIdNumeric.Controls.Add(this.regulationsSearchButton);
-            this.regulationsIdNumeric.Controls.Add(this.regulationsLoadId);
-            this.regulationsIdNumeric.Controls.Add(this.regulationsChangeModeButton);
-            this.regulationsIdNumeric.Controls.Add(this.regulationsDeleteButton);
-            this.regulationsIdNumeric.Controls.Add(this.regulationsEditButton);
-            this.regulationsIdNumeric.Controls.Add(this.regulationsRefreshButton);
-            this.regulationsIdNumeric.Controls.Add(this.regulationsAddButton);
-            this.regulationsIdNumeric.Controls.Add(this.regulationsGenderCombobox);
-            this.regulationsIdNumeric.Controls.Add(this.label3);
-            this.regulationsIdNumeric.Controls.Add(this.label15);
-            this.regulationsIdNumeric.Controls.Add(this.label16);
-            this.regulationsIdNumeric.Controls.Add(this.label18);
-            this.regulationsIdNumeric.Controls.Add(this.label19);
-            this.regulationsIdNumeric.Controls.Add(this.label20);
-            this.regulationsIdNumeric.Location = new System.Drawing.Point(4, 25);
-            this.regulationsIdNumeric.Name = "regulationsIdNumeric";
-            this.regulationsIdNumeric.Size = new System.Drawing.Size(1379, 523);
-            this.regulationsIdNumeric.TabIndex = 2;
-            this.regulationsIdNumeric.Text = "Нормативи";
-            this.regulationsIdNumeric.UseVisualStyleBackColor = true;
-            // 
-            // numericUpDown3
-            // 
-            this.numericUpDown3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.numericUpDown3.Location = new System.Drawing.Point(910, 82);
-            this.numericUpDown3.Maximum = new decimal(new int[] {
+            this.regulationsIdNumeric.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.regulationsIdNumeric.Location = new System.Drawing.Point(910, 82);
+            this.regulationsIdNumeric.Maximum = new decimal(new int[] {
             1215752192,
             23,
             0,
             0});
-            this.numericUpDown3.Minimum = new decimal(new int[] {
+            this.regulationsIdNumeric.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(265, 38);
-            this.numericUpDown3.TabIndex = 45;
-            this.numericUpDown3.Value = new decimal(new int[] {
+            this.regulationsIdNumeric.Name = "regulationsIdNumeric";
+            this.regulationsIdNumeric.Size = new System.Drawing.Size(265, 38);
+            this.regulationsIdNumeric.TabIndex = 45;
+            this.regulationsIdNumeric.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown3.ValueChanged += new System.EventHandler(this.numericUpDown3_ValueChanged);
+            this.regulationsIdNumeric.ValueChanged += new System.EventHandler(this.numericUpDown3_ValueChanged);
             // 
             // currentPageRegulationsNumeric
             // 
@@ -1038,9 +1038,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.competitionIdNumeric)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.currentPageCompetitions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            this.regulationsIdNumeric.ResumeLayout(false);
-            this.regulationsIdNumeric.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            this.regulationsForm.ResumeLayout(false);
+            this.regulationsForm.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.regulationsIdNumeric)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.currentPageRegulationsNumeric)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
@@ -1062,7 +1062,7 @@
         private System.Windows.Forms.Button changeModeSportsmanButton;
         private System.Windows.Forms.Button deleteSportsmanButton;
         private System.Windows.Forms.Button editSportsmanButton;
-        private System.Windows.Forms.TabPage regulationsIdNumeric;
+        private System.Windows.Forms.TabPage regulationsForm;
         private System.Windows.Forms.TextBox sportsmanSponsorTextbox;
         private System.Windows.Forms.TextBox sportsmanEmailTextbox;
         private System.Windows.Forms.ComboBox sportsmanCategoryCombobox;
@@ -1097,7 +1097,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.NumericUpDown regulationsIdNumeric;
         private System.Windows.Forms.NumericUpDown currentPageRegulationsNumeric;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.TextBox regulationsSearchinputTextbox;
