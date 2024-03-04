@@ -26,6 +26,9 @@ namespace api_laravel
             InitializeComponent();
             _httpClient = new HttpClient();
 
+            competitionDatetimePicker.Format = DateTimePickerFormat.Custom;
+            competitionDatetimePicker.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+
             addSportsmanButton.Enabled = false;
             changeModeSportsmanMethod();
             loadSportsmans();
@@ -752,10 +755,10 @@ namespace api_laravel
                 var jsonBody = JsonConvert.SerializeObject(new
                 {
                     newSportsman.Name,
-                    newSportsman.EventDate,
-                    newSportsman.EventLocation,
-                    newSportsman.PrizePool,
-                    newSportsman.SportsType
+                    event_date =newSportsman.EventDate,
+                    event_location = newSportsman.EventLocation,
+                    prize_pool = newSportsman.PrizePool,
+                    sports_type = newSportsman.SportsType
                 }, settings);
 
                 HttpContent content = new StringContent(jsonBody, Encoding.UTF8, "application/json");
@@ -921,10 +924,10 @@ namespace api_laravel
                 var jsonBody = JsonConvert.SerializeObject(new
                 {
                     updatedSportsman.Name,
-                    updatedSportsman.EventDate,
-                    updatedSportsman.EventLocation,
-                    updatedSportsman.PrizePool,
-                    updatedSportsman.SportsType,
+                    event_date =updatedSportsman.EventDate,
+                    event_location = updatedSportsman.EventLocation,
+                    prize_pool = updatedSportsman.PrizePool,
+                    sports_type = updatedSportsman.SportsType,
 
                 }, settings);
 
